@@ -5,7 +5,7 @@ export default function Academics() {
     return (
         <main className="pt-28">
             {/* Hero Section */}
-            <section className="relative h-[819px] flex items-center overflow-hidden">
+            <section className="relative min-h-[500px] md:h-[819px] flex items-center overflow-hidden pt-20 md:pt-0">
                 <div className="absolute inset-0 z-0">
                     <img alt="Main Building" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNLHhjWx6CMKq2u2C-vatjesboiyirnNxBSvcWfIVVqvieWe8pziga5o9IKouctn-zPeNiqx0hIr2ezLwIKyEXJ6G0B9iU2xCGdalbgx_dAqpR22nDCempJ8JoMl2RqOnnk9W3gjqitO-0IgbigdDUxgqKKMODlTsTPIlzhCzByf_9lU8Egx6L74wN8QJVVPYBlZveJsZaZvzRZq3L6ZEgltU08zt5WRrUIXzu05IPpRcJGgW3eERjHXBbcGVdGkWqxXCcH-U9kcZP" />
                     <div className="absolute inset-0 bg-primary/60 mix-blend-multiply"></div>
@@ -41,7 +41,7 @@ export default function Academics() {
                 <div className="container mx-auto">
                     <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
                         <div className="max-w-2xl">
-                            <h2 className="text-5xl font-serif text-primary mb-6">Our Academic Programs</h2>
+                            <h2 className="text-4xl md:text-5xl font-serif text-primary mb-6">Our Academic Programs</h2>
                             <p className="text-lg text-slate-600">All our educational programmes are approved by the concerned statutory bodies and are designed to impart comprehensive knowledge.</p>
                         </div>
                         <div className="hidden md:block h-[2px] flex-grow mx-12 bg-outline-variant/30"></div>
@@ -104,7 +104,7 @@ export default function Academics() {
                     <div className="flex flex-col md:flex-row items-center justify-between mb-16 border-b border-white/10 pb-12">
                         <div className="mb-8 md:mb-0 max-w-3xl">
                             <span className="uppercase tracking-[0.1rem] text-tertiary-fixed font-bold mb-4 block">NDRK Facilities</span>
-                            <h2 className="text-5xl md:text-6xl font-serif text-white mb-6">Design Your Future</h2>
+                            <h2 className="text-4xl md:text-6xl font-serif text-white mb-6">Design Your Future</h2>
                             <p className="text-white/80 text-lg leading-relaxed mb-4">
                                 Create a new app for an underserved population. Improve services for parents and children or create a groundbreaking new health device.
                             </p>
@@ -166,10 +166,10 @@ export default function Academics() {
 
             {/* Newsletter CTA */}
             <section className="py-24 px-8 bg-surface">
-                <div className="container mx-auto bg-surface-variant p-16 rounded-3xl flex flex-col md:flex-row items-center justify-between shadow-[0px_20px_40px_rgba(25,28,29,0.06)]">
-                    <div className="max-w-xl mb-10 md:mb-0">
-                        <h2 className="text-4xl font-serif text-primary mb-4">Stay Informed</h2>
-                        <p className="text-slate-600 text-lg">Receive insights on upcoming admissions, curriculum updates, and academic seminars directly in your inbox.</p>
+                <div className="container mx-auto bg-surface-variant p-8 md:p-16 rounded-3xl flex flex-col md:flex-row items-center justify-between shadow-[0px_20px_40px_rgba(25,28,29,0.06)]">
+                    <div className="max-w-xl mb-10 md:mb-0 text-center md:text-left">
+                        <h2 className="text-3xl md:text-4xl font-serif text-primary mb-4">Stay Informed</h2>
+                        <p className="text-slate-600 text-base md:text-lg">Receive insights on upcoming admissions, curriculum updates, and academic seminars directly in your inbox.</p>
                     </div>
                     <div className="w-full md:w-auto flex flex-col md:flex-row gap-4">
                         <input className="bg-white border-none rounded-full px-8 py-4 w-full md:w-80 focus:ring-2 focus:ring-secondary" placeholder="Your academic email" type="email" />

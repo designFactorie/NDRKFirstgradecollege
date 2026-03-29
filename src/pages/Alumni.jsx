@@ -8,10 +8,10 @@ export default function Alumni() {
             <section className="relative py-24 md:py-40 flex flex-col items-center bg-surface overflow-visible">
                 <div className="max-w-4xl mx-auto px-8 w-full text-center z-10">
                     <span className="inline-block px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed text-[10px] font-bold tracking-[0.2em] uppercase rounded-sm mb-6">Network of Excellence</span>
-                    <h1 className="font-headline text-5xl md:text-7xl font-bold mb-8 leading-tight text-primary">
+                    <h1 className="font-headline text-3xl md:text-7xl font-bold mb-8 leading-tight text-primary">
                         A Global <span className="italic text-secondary font-serif">Network</span> of Excellence.
                     </h1>
-                    <p className="text-slate-600 text-xl max-w-2xl mx-auto mb-12 leading-relaxed font-medium">
+                    <p className="text-slate-600 text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed font-medium">
                         NDRK Group of Institutions offers programs & resources to alumni at every phase of your career. From graduates to industry leaders, explore our legacy.
                     </p>
                     <div className="flex flex-wrap gap-6 justify-center items-center mb-16">
@@ -36,28 +36,28 @@ export default function Alumni() {
                 <div className="max-w-7xl mx-auto px-8">
                     <div className="flex flex-col mb-16 max-w-2xl">
                         <span className="text-secondary font-bold text-[10px] tracking-widest uppercase mb-4 block">Testimonials</span>
-                        <h2 className="font-serif text-5xl text-primary mb-6">Our Alumni stories inspires you!</h2>
-                        <p className="text-slate-600 text-lg">Over years, Parents have trusted for their child's future that we can ensure the all round - development of every student in his/ her own way!</p>
+                        <h2 className="font-serif text-3xl md:text-5xl text-primary mb-6">Our Alumni stories inspires you!</h2>
+                        <p className="text-slate-600 text-base md:text-lg">Over years, Parents have trusted for their child's future that we can ensure the all round - development of every student in his/ her own way!</p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {/* Feature 1 */}
                         <div className="group relative overflow-hidden rounded-xl bg-primary aspect-[4/3] shadow-[0px_20px_40px_rgba(25,28,29,0.06)]">
                             <img alt="Samhitha" className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYd1F5nxjwk6_anlRNkuo1ybJ6Reu3RK90i5rfYKOiMZ85asWTepVafqADNIHbap1VNsnr-GXSRJshyLpA7z5LCyBR18p3zvE7T1fhIGc65RILBcw9rQ4jr91iyt419m5IQ-BQ5zzSxwbyTXvFg4oxHw8IAGWtcKloNxajG7TpTifc6oxGgp3-7aoIBOvfaAJNJM-vKt9ec1Du766miqd429fVRceg9aYmAuJnFs0cNas7PTw8Vp1khVORSG01rmBpi8dyVcMjs801" />
-                            <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/60 to-transparent p-10 flex flex-col justify-end">
+                            <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/60 to-transparent p-6 md:p-10 flex flex-col justify-end">
                                 <span className="text-tertiary-fixed text-[10px] font-bold tracking-widest uppercase mb-2">Class of 2019</span>
-                                <h3 className="text-white font-serif text-4xl mb-4">Samhitha</h3>
-                                <p className="text-slate-300 mb-6 italic">"The faculty at NDRK are deeply committed to providing an enriching educational experience. Throughout my time there, they consistently encouraged me to challenge myself and explore new ideas. The support and guidance I received were invaluable in shaping my academic and professional journey."</p>
+                                <h3 className="text-white font-serif text-2xl md:text-4xl mb-4">Samhitha</h3>
+                                <p className="text-slate-300 text-sm md:text-base mb-6 italic">"The faculty at NDRK are deeply committed to providing an enriching educational experience..."</p>
                             </div>
                         </div>
 
                         {/* Feature 2: Rupesh */}
                         <div className="group relative overflow-hidden rounded-xl bg-primary aspect-[4/3] shadow-[0px_20px_40px_rgba(25,28,29,0.06)]">
                             <img alt="Rupesh Mittal" className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtTQvM7gwm7DSS5j0jf8g6Lds6a9sqZfxMlEfQvOHZRGhfdB4cTTz9pb-zy8b08BX_l6aWSjWxBqc0E_h9o5J-1tHSg8aTdJC5Lc5DQnJxJkOYSodTom823fqeu-GNxiyNlca-i4bXUmQJ0Il7hAscHJxET3W9fHUJHdu1WLlGgJhm3ARPyjoGFjb5V6BpCfzvz01MTZGYuuCQNZn89n68I4q_uFmwcQ1g-pv2HwKQZz0Q_5pwXSxUzQXVARGcANyJtAtntxRcFs0J" />
-                            <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/60 to-transparent p-10 flex flex-col justify-end">
+                            <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/60 to-transparent p-6 md:p-10 flex flex-col justify-end">
                                 <span className="text-tertiary-fixed text-[10px] font-bold tracking-widest uppercase mb-2">Alumni in News</span>
-                                <h3 className="text-white font-serif text-4xl mb-4">Rupesh Mittal</h3>
-                                <p className="text-slate-300 mb-6 font-medium">Founder of Cyber Jagruthi. Won National Awards, worked with UN agencies, and actively contributes to cybersecurity policy-making.</p>
+                                <h3 className="text-white font-serif text-2xl md:text-4xl mb-4">Rupesh Mittal</h3>
+                                <p className="text-slate-300 text-sm md:text-base mb-6 font-medium">Founder of Cyber Jagruthi. Won National Awards, worked with UN agencies, and actively contributes to cybersecurity policy-making.</p>
                             </div>
                         </div>
                     </div>
@@ -68,8 +68,8 @@ export default function Alumni() {
             <section className="py-24 bg-surface">
                 <div className="max-w-7xl mx-auto px-8">
                     <div className="text-center mb-20">
-                        <h2 className="font-serif text-5xl text-primary mb-4 italic">Alumni Events</h2>
-                        <div className="w-24 h-1 bg-tertiary mx-auto"></div>
+                        <h2 className="font-serif text-3xl md:text-5xl text-primary mb-4 italic text-center">Alumni Events</h2>
+                        <div className="w-16 md:w-24 h-1 bg-tertiary mx-auto"></div>
                     </div>
                     <div className="space-y-6">
                         {/* ICBMSS Event */}
@@ -98,8 +98,8 @@ export default function Alumni() {
             <section className="py-24 bg-surface-container-highest">
                 <div className="max-w-7xl mx-auto px-8">
                     <div className="text-center mb-16">
-                        <h2 className="font-serif text-5xl text-primary mb-4">How can alumni give back?</h2>
-                        <p className="text-slate-600 text-lg">Your support shapes the future of NDRK and its students.</p>
+                        <h2 className="font-serif text-3xl md:text-5xl text-primary mb-4">How can alumni give back?</h2>
+                        <p className="text-slate-600 text-base md:text-lg">Your support shapes the future of NDRK and its students.</p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         <div className="bg-surface-container-lowest p-8 rounded-xl text-center shadow-[0px_20px_40px_rgba(25,28,29,0.06)] group hover:-translate-y-2 transition-transform duration-300">
@@ -128,7 +128,7 @@ export default function Alumni() {
 
             {/* Call to Action */}
             <section className="py-24 bg-surface">
-                <div className="max-w-4xl mx-auto px-8 bg-surface-container-lowest p-16 rounded-xl text-center shadow-[0px_20px_40px_rgba(25,28,29,0.06)] border border-outline-variant/20">
+                <div className="max-w-4xl mx-auto px-8 bg-surface-container-lowest p-8 md:p-16 rounded-xl text-center shadow-[0px_20px_40px_rgba(25,28,29,0.06)] border border-outline-variant/20">
                     <h3 className="font-serif text-4xl text-primary mb-6">Stay Connected to Your Roots</h3>
                     <p className="text-slate-600 mb-10 text-lg">Update your profile to receive exclusive invitations, career opportunities, and the quarterly Alumni Journal.</p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">

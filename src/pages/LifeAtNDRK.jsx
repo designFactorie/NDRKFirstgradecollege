@@ -9,8 +9,8 @@ export default function LifeAtNDRK() {
                 <div className="max-w-7xl mx-auto px-8 grid lg:grid-cols-12 gap-12 items-center">
                     <div className="z-10 relative lg:col-span-7 pt-12">
                         <span className="inline-block bg-tertiary-fixed text-on-tertiary-fixed px-3 py-1 rounded-sm text-[10px] font-bold tracking-[0.2em] uppercase mb-6">Experience NDRK</span>
-                        <h1 className="font-headline text-4xl md:text-6xl font-bold mb-8 leading-tight text-primary">
-                            The Student Experience: <span className="font-serif italic font-light block mt-4 text-secondary">Beyond the Classroom</span>
+                        <h1 className="font-headline text-3xl md:text-6xl font-bold mb-8 leading-tight text-primary">
+                            The Student Experience: <span className="font-serif italic font-light md:block mt-4 text-secondary">Beyond the Classroom</span>
                         </h1>
                         <p className="text-xl text-slate-600 max-w-lg mb-10 leading-relaxed">
                             Life at NDRK goes beyond textbooks and lectures. We believe in nurturing well-rounded individuals who not only excel academically but also thrive in extracurricular pursuits.
@@ -66,22 +66,22 @@ export default function LifeAtNDRK() {
                     <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
                         <div className="max-w-3xl">
                             <span className="text-[10px] font-bold tracking-widest uppercase text-secondary mb-4 block">Extracurricular</span>
-                            <h2 className="font-headline text-5xl md:text-6xl font-black text-primary mb-6">Thrive on Campus and Beyond</h2>
-                            <p className="text-slate-600 text-lg leading-relaxed">
+                            <h2 className="font-headline text-3xl md:text-6xl font-black text-primary mb-6">Thrive on Campus and Beyond</h2>
+                            <p className="text-slate-600 text-base md:text-lg leading-relaxed">
                                 Make a difference. We have exciting opportunities for you to connect your classroom experience with helping underserved communities in Hassan, engage in real world business and research or make your debut as an entrepreneur.
                             </p>
                         </div>
                         <a className="text-primary font-bold border-b-2 border-primary-container pb-1 hover:text-secondary hover:border-secondary transition-colors whitespace-nowrap" href="#">View All Activities</a>
                     </div>
 
-                    <div className="grid grid-cols-12 gap-6 h-[800px]">
+                    <div className="grid grid-cols-12 gap-6 md:h-[800px]">
                         {/* Main Item: Sports & Wellness */}
-                        <div className="col-span-12 md:col-span-8 h-full rounded-2xl overflow-hidden relative group shadow-[0px_20px_40px_rgba(25,28,29,0.06)]">
+                        <div className="col-span-12 md:col-span-8 h-80 md:h-full rounded-2xl overflow-hidden relative group shadow-[0px_20px_40px_rgba(25,28,29,0.06)]">
                             <img alt="Sports" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiWF-LCs4eupCTrZKYo0AWHSDG8SNvG25OrXvIkgibfsuJv4pQCqipp4pejlxat_MpTz9xL4QKa9uS9BLGK3iIs-4J_8Yb0X3BzcqCQcy_f8bpd3I2fgdkBSHcIp_epKydyy-wkwHKZrmLICPu8nXlsoGAkZstONkGMnWOtWNahbAsRnm7SzFgnWp_wl6fyyDg_JfedoENefc4fKvJ-cnQ2SPzOScQRazzij6Nbn7patTAsX35CLf2CbYVRXdD9j3_IFkhBmRpwIWV" onError={(e) => { e.target.src = "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=2670&auto=format&fit=crop"; }} />
                             <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
-                            <div className="absolute bottom-8 left-8 text-white max-w-lg">
-                                <h4 className="text-3xl font-bold mb-2">Sports & Wellness</h4>
-                                <p className="text-white/80">From inter-college championships to state-of-the-art gym facilities, we offer a range of sports to keep you active.</p>
+                            <div className="absolute bottom-6 left-6 md:bottom-8 md:left-8 text-white max-w-lg">
+                                <h4 className="text-2xl md:text-3xl font-bold mb-2">Sports & Wellness</h4>
+                                <p className="text-xs md:text-white/80">From inter-college championships to state-of-the-art gym facilities, we offer a range of sports to keep you active.</p>
                             </div>
                         </div>
                         {/* Small Stack items */}
@@ -137,12 +137,12 @@ export default function LifeAtNDRK() {
                 <div className="max-w-4xl mx-auto px-8">
                     <div className="mb-16 text-center">
                         <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-secondary mb-4 block">Other Success Stories</span>
-                        <h2 className="font-serif italic text-4xl text-primary mb-6">Read more about our School NDRK...</h2>
+                        <h2 className="font-serif italic text-3xl md:text-4xl text-primary mb-6">Read more about our School NDRK...</h2>
                         <div className="w-16 h-1 bg-tertiary-container mx-auto"></div>
                     </div>
 
                     {/* Blog Item */}
-                    <article className="bg-surface-container-lowest p-10 md:p-12 rounded-2xl shadow-[0px_20px_40px_rgba(25,28,29,0.06)] flex flex-col items-center text-center">
+                    <article className="bg-surface-container-lowest p-8 md:p-12 rounded-2xl shadow-[0px_20px_40px_rgba(25,28,29,0.06)] flex flex-col items-center text-center">
                         <div className="w-20 h-20 rounded-full overflow-hidden mb-6 border-4 border-surface-container ring-1 ring-outline-variant/20">
                             <img alt="Samhitha K" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYd1F5nxjwk6_anlRNkuo1ybJ6Reu3RK90i5rfYKOiMZ85asWTepVafqADNIHbap1VNsnr-GXSRJshyLpA7z5LCyBR18p3zvE7T1fhIGc65RILBcw9rQ4jr91iyt419m5IQ-BQ5zzSxwbyTXvFg4oxHw8IAGWtcKloNxajG7TpTifc6oxGgp3-7aoIBOvfaAJNJM-vKt9ec1Du766miqd429fVRceg9aYmAuJnFs0cNas7PTw8Vp1khVORSG01rmBpi8dyVcMjs801" />
                         </div>

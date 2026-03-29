@@ -5,7 +5,7 @@ export default function Admissions() {
     return (
         <main className="bg-surface min-h-screen pt-28">
             {/* Hero Section */}
-            <section className="relative h-[819px] flex items-center overflow-hidden bg-primary">
+            <section className="relative min-h-[500px] md:h-[819px] flex items-center overflow-hidden bg-primary pt-20 md:pt-0">
                 <div className="absolute inset-0 opacity-40">
                     <img className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCphmSyWxt_XugIcUQt6Ee2h3JJrf7GFDHazeCfXfE0oxtyPEN1dumSe0Q1tgxYDdeTY9cDJrVWFkPZa8WY2e0OMS_CZEalYd2H69IklE5IXJoVhxKnH_v0YCQYr-AC7Z0x12XUs-DKwJ33IxU1P_trLI9C5nal701o1aA2Aslv1V-4VZ2DNX6z4gf3Y6vRAoCW_uxHbO7Z7i24WNUYSWVwqvjZFjnKn69xZmBWv2R6L2w1octvNAm8EFeq1UWTT6XDkkbsTohf7uyY" alt="Campus Building" />
                     <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-transparent"></div>
@@ -59,8 +59,8 @@ export default function Admissions() {
             <section className="py-24 px-8 max-w-7xl mx-auto">
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
                     <div className="max-w-2xl">
-                        <h2 className="font-headline text-4xl md:text-5xl font-bold text-primary mb-6 tracking-tight">Eligibility Criteria</h2>
-                        <p className="text-slate-600 text-lg">Detailed academic requirements for our premier undergraduate and postgraduate programs. Admissions are subject to availability of seats and fulfillment of specific program requirements.</p>
+                        <h2 className="font-headline text-3xl md:text-5xl font-bold text-primary mb-6 tracking-tight">Eligibility Criteria</h2>
+                        <p className="text-slate-600 text-base md:text-lg">Detailed academic requirements for our premier undergraduate and postgraduate programs. Admissions are subject to availability of seats and fulfillment of specific program requirements.</p>
                     </div>
                     <div className="h-[2px] flex-grow bg-surface-container-highest mx-8 hidden md:block"></div>
                 </div>
@@ -158,8 +158,8 @@ export default function Admissions() {
                 <div className="max-w-7xl mx-auto px-8">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
                         {/* General Requirements Checklist */}
-                        <div className="lg:col-span-7 bg-surface-container-lowest p-12 rounded-xl shadow-[0px_20px_40px_rgba(25,28,29,0.06)]">
-                            <h2 className="font-headline text-4xl font-bold text-primary mb-12">Application Requirements</h2>
+                        <div className="lg:col-span-7 bg-surface-container-lowest p-8 md:p-12 rounded-xl shadow-[0px_20px_40px_rgba(25,28,29,0.06)]">
+                            <h2 className="font-headline text-3xl md:text-4xl font-bold text-primary mb-12">Application Requirements</h2>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
                                 <div className="flex gap-4">
                                     <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center shrink-0">
@@ -224,8 +224,8 @@ export default function Admissions() {
 
             {/* Application Form */}
             <section className="py-24 px-8 max-w-5xl mx-auto" id="apply-form">
-                <div className="text-center mb-16">
-                    <h2 className="font-headline text-5xl font-bold text-primary mb-4">Application Form</h2>
+                <div className="text-center mb-16 px-4">
+                    <h2 className="font-headline text-3xl md:text-5xl font-bold text-primary mb-4">Application Form</h2>
                     <p className="text-slate-600 max-w-2xl mx-auto">Unlock Your Potential, Enroll Today at NDRK First Grade College: Where Dreams Begin!</p>
                 </div>
                 <form className="space-y-12">
@@ -297,7 +297,7 @@ export default function Admissions() {
                         </div>
                     </div>
                     <div className="pt-12">
-                        <button className="w-full bg-primary text-white py-6 rounded-full font-black text-xl hover:bg-secondary transition-colors shadow-2xl flex items-center justify-center gap-4" type="submit">
+                        <button className="w-full bg-primary text-white py-4 md:py-6 rounded-full font-black text-lg md:text-xl hover:bg-secondary transition-colors shadow-2xl flex items-center justify-center gap-4" type="submit">
                             Apply Now
                             <span className="material-symbols-outlined">send</span>
                         </button>

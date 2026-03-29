@@ -5,7 +5,7 @@ export default function Coursera() {
     return (
         <main className="pt-28">
             {/* Hero Section */}
-            <section className="relative min-h-[819px] flex items-center overflow-hidden bg-primary">
+            <section className="relative min-h-[500px] md:min-h-[819px] flex items-center overflow-hidden bg-primary pt-20 md:pt-0">
                 <div className="absolute inset-0 opacity-40">
                     <img className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmhmC3x2OAnTSb1lbQK-MeBJGranwgt4NsIOUH7J2LY7X6pQycOVYYynwbYK7E5zUWKecieIZ-AcNX0AkyR6zPV59nwkFDqzlDiP5owsvc6k3G-aGobLvkaNmAwrSDkyv7eda5u8L4YuMUxacVYFxSbjXKgcxg12_uW1ex2skMjEsOvGA9Bfxnz5FV2pSCHdRS7zqNkBK12pHjQMo7dVa3BfmhPIG0uDkk2OR7W8E1LpTdZ7hwTkM1mOB1LXavcCwAtG65SXBgadIP" alt="Student learning" />
                 </div>
@@ -31,19 +31,19 @@ export default function Coursera() {
             <section className="py-24 bg-surface-container-low">
                 <div className="max-w-7xl mx-auto px-8">
                     <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
-                        <div className="max-w-2xl">
-                            <h2 className="text-4xl md:text-5xl font-headline font-bold text-primary mb-4">World-Class Certifications</h2>
+                        <div className="max-w-2xl text-center md:text-left">
+                            <h2 className="text-3xl md:text-4xl lg:text-5xl font-headline font-bold text-primary mb-4">World-Class Certifications</h2>
                             <p className="text-slate-600 leading-relaxed">The academy offers a variety of Professional Certificates from leading companies, such as Google, IBM, and Meta. These certificates can help students gain the skills they need to get a job in a variety of fields, including data science, cybersecurity, and marketing.</p>
                         </div>
                     </div>
 
-                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
                         {/* Brand Cards */}
-                        <div className="bg-surface-container-lowest p-12 rounded-xl flex flex-col items-center justify-center group hover:scale-[1.02] transition-transform duration-300 shadow-[0px_20px_40px_rgba(25,28,29,0.06)] border border-outline-variant/10">
+                        <div className="bg-surface-container-lowest p-8 md:p-12 rounded-xl flex flex-col items-center justify-center group hover:scale-[1.02] transition-transform duration-300 shadow-[0px_20px_40px_rgba(25,28,29,0.06)] border border-outline-variant/10">
                             <img className="h-20 w-auto object-contain grayscale group-hover:grayscale-0 transition-all opacity-80 group-hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPiShxc65HefqSWBRUhhYHaikMrWWN5g36aUfLE4nzPOYH0aX7yLNZUWiSNdoexukTHWnlCrdWqo8EXAC91dgO5C4sL-LrfWKFgQAyfYNkJEBLDkz8ThrVjyB0nvbAOr7oF-dAhNuTmxbXDu-w_CTkShCwkHV-fi8LRbkVWsTg6XrLT8bTR-iyN-www5QMeOiq7TyQtyrUXwEMhV96Pw-EtnIjJBnXn9iRO5UAKSPCNb8omT2OIdtzh2thVurxWjgfNnCPJze7JgXE" alt="Google" />
                             <span className="mt-6 text-sm font-bold tracking-widest text-slate-500 uppercase">Google</span>
                         </div>
-                        <div className="bg-surface-container-lowest p-12 rounded-xl flex flex-col items-center justify-center group hover:scale-[1.02] transition-transform duration-300 shadow-[0px_20px_40px_rgba(25,28,29,0.06)] border border-outline-variant/10">
+                        <div className="bg-surface-container-lowest p-8 md:p-12 rounded-xl flex flex-col items-center justify-center group hover:scale-[1.02] transition-transform duration-300 shadow-[0px_20px_40px_rgba(25,28,29,0.06)] border border-outline-variant/10">
                             <img className="h-20 w-auto object-contain grayscale group-hover:grayscale-0 transition-all opacity-80 group-hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTXVzvhQc8iRcT7JmlQg_2ig89YGkbV8dA2ZRHAPGMRNVmkuQ9NyT88hf0H1H1TyN_Jc2aap6jRVmDcHMD6oJmmREZJraJ5qc1zqeuoHDdhAKa5h8jkmk1VfXQ_WekKx60fzrd9jNIhS1YUqkItlYrpjQZuGPiZfhT5G8jmdTWAEw2Ue1GzDwNXaSo_58ydnio-SiF4G1sZdq9eBx-jLbRCvF7vnUtJAyJ7loYcI4LDTQDLd0Us2_D9AsNceRoMdSlBdD-Ck92mluP" alt="IBM" />
                             <span className="mt-6 text-sm font-bold tracking-widest text-slate-500 uppercase">IBM</span>
                         </div>
@@ -51,7 +51,7 @@ export default function Coursera() {
                             <span className="material-symbols-outlined text-6xl text-slate-400 group-hover:text-primary transition-colors">cloud</span>
                             <span className="mt-6 text-sm font-bold tracking-widest text-slate-500 uppercase">Amazon Web Services</span>
                         </div>
-                        <div className="bg-surface-container-lowest p-12 rounded-xl flex flex-col items-center justify-center group hover:scale-[1.02] transition-transform duration-300 shadow-[0px_20px_40px_rgba(25,28,29,0.06)] border border-outline-variant/10">
+                        <div className="bg-surface-container-lowest p-8 md:p-12 rounded-xl flex flex-col items-center justify-center group hover:scale-[1.02] transition-transform duration-300 shadow-[0px_20px_40px_rgba(25,28,29,0.06)] border border-outline-variant/10">
                             <img className="h-20 w-auto object-contain grayscale group-hover:grayscale-0 transition-all opacity-80 group-hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3LA88kL-E1DHSnouZg-KGOGzgEuWtZhBTPnFf4PUDY4LSdsJDmMPl0ga2yEJs2BO5gg2vOGCrMn504lccUonvx--Pw0VEADo0uqQ8vmVXxR3RORWuiQxmHRALGAYvWQHKzIMZzoPq4zNFDyC0bqSdZ11glNKszkiq8JEF20URBjNNbwQExDQH2MXeL1n1fa5mW476yYFvo66T5KI7o7gDTUKNtCzaaEdXIgTabqyHr1AU44dPJms_HYTrmG6mm6lKSnuqUxCP-87A" alt="Meta" />
                             <span className="mt-6 text-sm font-bold tracking-widest text-slate-500 uppercase">Meta</span>
                         </div>
@@ -75,7 +75,7 @@ export default function Coursera() {
             <section className="py-32 overflow-hidden bg-surface">
                 <div className="max-w-7xl mx-auto px-8 grid grid-cols-12 gap-12">
                     <div className="col-span-12 lg:col-span-5 relative mb-12 lg:mb-0">
-                        <h3 className="text-5xl md:text-6xl font-headline font-bold text-primary tracking-tighter mb-8 bg-surface">Benefits of Coursera Career Academy</h3>
+                        <h3 className="text-3xl md:text-5xl lg:text-6xl font-headline font-bold text-primary tracking-tighter mb-8 bg-surface">Benefits of Coursera Career Academy</h3>
                         <div className="w-full aspect-[4/5] rounded-xl overflow-hidden shadow-[0px_20px_40px_rgba(25,28,29,0.06)]">
                             <img className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZofgpJ5osCl7JfAKQ7lkKkVAyaglS_izabvAp8Q-V1NFVHDv3Q_JU08gTOaZHQ2njUZUlV0LpmWNDbv4ZnQGBhYzX61lLJzXRUXuH4sFigV1ojK5yY4w8aDR8obz2cc4KY3mW-ifyxdKq57r0hurMTNzA2kqhUbDroDLsU2J0Jl4LqQvTGruXrkQ3ifDRJXeADFgKdn2h0BQUT1yqWh_sKvcUAFbW7e8ry-rsYDxD-yD35rLoJ_u6hhtWxodKwWTv_OAWsF04m09n" alt="Professional student" />
                         </div>
@@ -83,7 +83,7 @@ export default function Coursera() {
                             <p className="font-headline italic text-xl">"Industry-led training that transforms theoretical knowledge into professional capability."</p>
                         </div>
                     </div>
-                    <div className="col-span-12 lg:col-span-7 flex flex-col justify-center space-y-12 lg:pl-16">
+                    <div className="col-span-12 lg:col-span-7 flex flex-col justify-center space-y-8 md:space-y-12 lg:pl-16">
                         <div className="group">
                             <div className="flex items-start gap-6">
                                 <span className="material-symbols-outlined text-4xl text-secondary">workspace_premium</span>
@@ -128,7 +128,7 @@ export default function Coursera() {
             <section className="py-24 bg-primary text-white">
                 <div className="max-w-7xl mx-auto px-8">
                     <div className="text-center mb-16">
-                        <h2 className="text-4xl md:text-5xl font-headline font-bold mb-6 italic">How to Enroll in Coursera Career Academy?</h2>
+                        <h2 className="text-3xl md:text-5xl font-headline font-bold mb-6 italic">How to Enroll?</h2>
                         <p className="max-w-2xl mx-auto text-primary-fixed-dim text-lg">
                             Coursera Career Academy is open to all NDRKFGC students who are interested in developing the skills they need for in-demand careers. There are no prerequisites for enrollment.
                         </p>
@@ -171,8 +171,8 @@ export default function Coursera() {
             <section className="py-32 bg-surface">
                 <div className="max-w-7xl mx-auto px-8">
                     <div className="bg-surface-container-highest rounded-3xl md:rounded-full overflow-hidden flex flex-col md:flex-row items-center shadow-[0px_20px_40px_rgba(25,28,29,0.06)]">
-                        <div className="md:w-1/2 p-16 text-center md:text-left">
-                            <h2 className="text-4xl font-headline font-bold text-primary mb-6 italic">Empowering student success.</h2>
+                        <div className="md:w-1/2 p-8 md:p-16 text-center md:text-left">
+                            <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary mb-6 italic">Empowering student success.</h2>
                             <p className="text-slate-600 mb-10 text-lg">NDRK First Grade College is committed to helping students succeed in their careers. With Coursera Career Academy, students can gain the skills they need to get a job in a high-demand field and start their career on the right foot.</p>
                             <div className="flex justify-center md:justify-start gap-4">
                                 <a className="text-secondary font-bold flex items-center gap-2 group hover:text-primary transition-colors" href="#">

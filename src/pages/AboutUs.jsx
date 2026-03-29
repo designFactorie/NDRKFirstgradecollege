@@ -5,7 +5,7 @@ export default function AboutUs() {
     return (
         <main className="pt-28">
             {/* Hero Section */}
-            <section className="relative h-[870px] flex items-center overflow-hidden bg-primary">
+            <section className="relative min-h-[500px] md:h-[870px] flex items-center overflow-hidden bg-primary pt-20 md:pt-0">
                 <div className="absolute inset-0 z-0">
                     <img alt="Campus Architecture" className="w-full h-full object-cover opacity-40 mix-blend-overlay" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbn2cc5tQHZCp_WSmSU6hU17Yu0EX0ZI2RunO-iKk-xy1DBCh-Ld5QINJ61pwLTslKdSC9qkkVqDSHISezRlvbBU0QbTXU4FqgvGROyLg3NZTo8didbwSVdYnIsynkcpXhaFZt17dSDbat9QkkPc2qyJ6vfxbcCHe1eRPu7GajNEBS84nfY2TsOq7tv9nm1W3bVFWzM-ap-qZ_w5RpkKDFocb0C51D6Lv7RYIU4j8hFo-5o3-XML0kZ2Pj5HByVqfCc3yCIB89X84C" />
                     <div className="absolute inset-0 bg-gradient-to-b from-primary/60 via-transparent to-primary"></div>
@@ -14,7 +14,7 @@ export default function AboutUs() {
                     <div className="max-w-4xl">
                         <span className="inline-block bg-tertiary-fixed text-on-tertiary-fixed px-3 py-1 rounded-sm text-xs font-bold tracking-[0.2rem] mb-6 font-label uppercase">Established 1977</span>
                         <h1 className="font-headline text-4xl md:text-6xl font-bold mb-8 leading-tight text-white">
-                            Our Legacy <span className="block text-secondary-fixed-dim not-italic font-headline">& Future</span>
+                            Our Legacy <span className="md:block text-secondary-fixed-dim not-italic font-headline">& Future</span>
                         </h1>
                         <p className="text-xl md:text-2xl text-white/70 max-w-2xl font-light leading-relaxed">
                             Nurturing intellectual curiosity and ethical leadership for over four decades in the heart of academic tradition.
@@ -31,30 +31,30 @@ export default function AboutUs() {
                 <div className="container mx-auto px-8">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
                         <div className="lg:col-span-7 space-y-8">
-                            <h2 className="text-5xl md:text-6xl font-serif italic text-primary leading-none">A Tradition of <span className="font-headline not-italic font-bold">Excellence</span></h2>
+                            <h2 className="text-4xl md:text-6xl font-serif italic text-primary leading-tight">A Tradition of <span className="font-headline not-italic font-bold">Excellence</span></h2>
                             <div className="space-y-6 text-slate-600 text-lg leading-relaxed max-w-2xl">
                                 <p>Founded in 1977 by the visionary couple, late Smt. Narayani D R Karigowda and Late Sri D R Karigowda, NDRK First Grade College has a rich history rooted in a humble beginning. With a mere 25 students, the college embarked on its journey to provide quality education in the fields of Commerce, Business Management, and Science.</p>
                                 <p>Over the years, NDRK First Grade College has grown exponentially, emerging as a distinguished institution that imparts education to over 1200 students annually. With a strong emphasis on academic excellence and holistic development, the college has become a preferred choice for aspiring students seeking a well-rounded education.</p>
                                 <p>NDRK First Grade College continues to uphold its founders' vision, fostering a nurturing environment that encourages intellectual curiosity, critical thinking, and real-world application of knowledge.</p>
-                                <div className="flex gap-8 pt-6">
+                                <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-6">
                                     <div>
-                                        <div className="text-4xl font-headline font-bold text-secondary">40+</div>
-                                        <div className="text-xs uppercase tracking-widest font-label font-bold text-slate-500">Years of Impact</div>
+                                        <div className="text-3xl md:text-4xl font-headline font-bold text-secondary">40+</div>
+                                        <div className="text-[10px] md:text-xs uppercase tracking-widest font-label font-bold text-slate-500">Years of Impact</div>
                                     </div>
                                     <div>
-                                        <div className="text-4xl font-headline font-bold text-secondary">1200+</div>
-                                        <div className="text-xs uppercase tracking-widest font-label font-bold text-slate-500">Students Annually</div>
+                                        <div className="text-3xl md:text-4xl font-headline font-bold text-secondary">1200+</div>
+                                        <div className="text-[10px] md:text-xs uppercase tracking-widest font-label font-bold text-slate-500">Students Annually</div>
                                     </div>
-                                    <div>
-                                        <div className="text-4xl font-headline font-bold text-secondary">A Grade</div>
-                                        <div className="text-xs uppercase tracking-widest font-label font-bold text-slate-500">Accreditation</div>
+                                    <div className="col-span-2 sm:col-span-1">
+                                        <div className="text-3xl md:text-4xl font-headline font-bold text-secondary">A Grade</div>
+                                        <div className="text-[10px] md:text-xs uppercase tracking-widest font-label font-bold text-slate-500">Accreditation</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div className="lg:col-span-5 relative">
                             <div className="rounded-xl overflow-hidden shadow-[0px_20px_40px_rgba(25,28,29,0.06)] bg-white/5">
-                                <img alt="A Tradition of Excellence" className="w-full h-auto block" src="/assets/images/tmpt.png" />
+                                <img alt="A Tradition of Excellence" className="w-full h-auto block" src="assets/images/tmpt.png" />
                             </div>
                             <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 w-[85%] bg-primary p-8 rounded-xl shadow-[0px_20px_40px_rgba(25,28,29,0.1)] hidden md:block text-center border border-white/5">
                                 <p className="text-white font-serif italic text-2xl">"Wisdom is the bridge between history and the future."</p>
@@ -68,17 +68,17 @@ export default function AboutUs() {
             <section className="py-24 bg-surface-container-low">
                 <div className="container mx-auto px-8">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div className="bg-surface-container-lowest p-12 rounded-xl shadow-[0px_20px_40px_rgba(25,28,29,0.06)] group hover:bg-primary transition-colors duration-500">
+                        <div className="bg-surface-container-lowest p-8 md:p-12 rounded-xl shadow-[0px_20px_40px_rgba(25,28,29,0.06)] group hover:bg-primary transition-colors duration-500">
                             <span className="material-symbols-outlined text-secondary text-5xl mb-8 group-hover:text-tertiary-fixed transition-colors">rocket_launch</span>
                             <h3 className="text-3xl font-headline font-bold text-primary mb-6 group-hover:text-white transition-colors">Mission</h3>
                             <p className="text-slate-600 group-hover:text-white/80 transition-colors leading-relaxed">Provide quality education and holistic development opportunities that foster intellectual growth, critical thinking, and ethical values. Nurture a student-centric learning environment that promotes innovation, research, and industry relevance.</p>
                         </div>
-                        <div className="bg-surface-container-lowest p-12 rounded-xl shadow-[0px_20px_40px_rgba(25,28,29,0.06)] group hover:bg-primary transition-colors duration-500">
+                        <div className="bg-surface-container-lowest p-8 md:p-12 rounded-xl shadow-[0px_20px_40px_rgba(25,28,29,0.06)] group hover:bg-primary transition-colors duration-500">
                             <span className="material-symbols-outlined text-secondary text-5xl mb-8 group-hover:text-tertiary-fixed transition-colors">visibility</span>
                             <h3 className="text-3xl font-headline font-bold text-primary mb-6 group-hover:text-white transition-colors">Vision</h3>
                             <p className="text-slate-600 group-hover:text-white/80 transition-colors leading-relaxed">To be a leading educational institution committed to empowering students with knowledge, skills, and values to become successful professionals and responsible global citizens.</p>
                         </div>
-                        <div className="bg-surface-container-lowest p-12 rounded-xl shadow-[0px_20px_40px_rgba(25,28,29,0.06)] group hover:bg-primary transition-colors duration-500">
+                        <div className="bg-surface-container-lowest p-8 md:p-12 rounded-xl shadow-[0px_20px_40px_rgba(25,28,29,0.06)] group hover:bg-primary transition-colors duration-500">
                             <span className="material-symbols-outlined text-secondary text-5xl mb-8 group-hover:text-tertiary-fixed transition-colors">verified_user</span>
                             <h3 className="text-3xl font-headline font-bold text-primary mb-6 group-hover:text-white transition-colors">Core Values</h3>
                             <ul className="space-y-3 text-slate-600 group-hover:text-white/80 transition-colors">
@@ -97,7 +97,7 @@ export default function AboutUs() {
             <section className="py-24 bg-surface">
                 <div className="container mx-auto px-8">
                     <div className="text-center max-w-3xl mx-auto mb-16">
-                        <h2 className="text-5xl font-headline font-bold text-primary mb-4">Accolades & Accreditations</h2>
+                        <h2 className="text-4xl md:text-5xl font-headline font-bold text-primary mb-4">Accolades & Accreditations</h2>
                         <p className="text-slate-600">Our commitment to quality is recognized by the nation's leading educational bodies.</p>
                     </div>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-12 items-center">
@@ -127,14 +127,14 @@ export default function AboutUs() {
                     <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
                         <div>
                             <span className="text-tertiary-fixed font-label font-bold tracking-widest text-xs uppercase">Our Leadership</span>
-                            <h2 className="text-6xl font-serif italic mt-4">The <span className="not-italic font-headline font-bold">Visionaries</span></h2>
+                            <h2 className="text-4xl md:text-6xl font-serif italic mt-4">The <span className="not-italic font-headline font-bold">Visionaries</span></h2>
                         </div>
                         <p className="max-w-md text-white/60 leading-relaxed pb-2">Meet the dedicated leaders steering NDRK College toward new horizons of academic brilliance and innovation.</p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         <div className="group">
                             <div className="aspect-[3/4] rounded-xl overflow-hidden mb-6 bg-surface-container-highest relative">
-                                <img alt="Chairman Portrait" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="/assets/images/chairman.png" />
+                                <img alt="Chairman Portrait" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="assets/images/chairman.png" />
                                 <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                             </div>
                             <h4 className="text-xl font-headline font-bold mb-1">Manjula Prasad</h4>
@@ -153,7 +153,7 @@ export default function AboutUs() {
                 <div className="container mx-auto px-8">
                     <div className="bg-gradient-to-br from-primary to-primary-container rounded-3xl p-12 md:p-20 text-center relative overflow-hidden">
                         <div className="relative z-10">
-                            <h2 className="text-5xl md:text-7xl font-serif italic text-white mb-8">Ready to join our <span className="not-italic font-headline font-bold">legacy?</span></h2>
+                            <h2 className="text-3xl md:text-7xl font-serif italic text-white mb-8">Ready to join our <span className="not-italic font-headline font-bold">legacy?</span></h2>
                             <div className="flex flex-col md:flex-row gap-6 justify-center">
                                 <button className="bg-tertiary-fixed text-black px-10 py-4 rounded-full font-bold text-lg hover:bg-secondary transition-all">Download Prospectus</button>
                                 <button className="bg-transparent border border-white/20 text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-all">Schedule a Campus Visit</button>

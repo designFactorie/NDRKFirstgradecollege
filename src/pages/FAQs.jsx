@@ -10,7 +10,7 @@ export default function FAQs() {
                     <div className="flex flex-col md:flex-row md:items-end justify-between gap-12">
                         <div className="max-w-2xl">
                             <span className="inline-block px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed font-bold text-[10px] tracking-[0.2em] uppercase rounded-sm mb-6">Transparency & Guidance</span>
-                            <h1 className="font-headline text-4xl md:text-6xl font-bold mb-8 leading-tight text-white">FAQs & Mandatory Disclosure</h1>
+                            <h1 className="font-headline text-3xl md:text-6xl font-bold mb-8 leading-tight text-white">FAQs & Mandatory Disclosure</h1>
                             <p className="text-xl text-white/80 leading-relaxed">Access institutional reports, regulatory filings, and find answers to common inquiries regarding the NDRK academic ecosystem.</p>
                         </div>
                         <div className="hidden md:block pb-4">
@@ -30,7 +30,7 @@ export default function FAQs() {
                 <div className="max-w-7xl mx-auto px-8">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
                         <div className="lg:col-span-4">
-                            <h2 className="font-headline font-bold text-4xl text-primary mb-6">Mandatory Disclosure</h2>
+                            <h2 className="font-headline font-bold text-3xl md:text-4xl text-primary mb-6">Mandatory Disclosure</h2>
                             <p className="text-slate-600 mb-12">As part of our commitment to transparency and regulatory compliance, NDRK First Grade College maintains public access to all essential institutional records.</p>
                             <div className="space-y-4">
                                 <a href="https://drive.google.com/drive/folders/1pogcIK8LcylvDYl4T9wUAkFkXZYp4_we?usp=sharing" target="_blank" rel="noopener noreferrer" className="p-6 bg-surface-container-lowest rounded-xl flex items-center justify-between group cursor-pointer hover:bg-primary transition-all duration-300 shadow-sm border border-outline-variant/20 block no-underline decoration-transparent">
@@ -64,7 +64,7 @@ export default function FAQs() {
             <section className="py-24 bg-surface">
                 <div className="max-w-4xl mx-auto px-8">
                     <div className="text-center mb-20">
-                        <h2 className="font-serif italic text-5xl text-primary mb-4">Common Queries</h2>
+                        <h2 className="font-serif italic text-3xl md:text-5xl text-primary mb-4">Common Queries</h2>
                         <div className="h-1 w-24 bg-tertiary-container mx-auto"></div>
                     </div>
 
@@ -238,9 +238,9 @@ export default function FAQs() {
 
             {/* Support Call to Action */}
             <section className="mb-24 px-8">
-                <div className="max-w-7xl mx-auto rounded-3xl bg-primary-container p-12 md:p-20 relative overflow-hidden shadow-2xl">
+                <div className="max-w-7xl mx-auto rounded-3xl bg-primary-container p-8 md:p-20 relative overflow-hidden shadow-2xl">
                     <div className="relative z-10 max-w-2xl">
-                        <h2 className="font-serif italic text-4xl md:text-5xl text-white mb-6">Still have questions?</h2>
+                        <h2 className="font-serif italic text-3xl md:text-5xl text-white mb-6">Still have questions?</h2>
                         <p className="text-primary-fixed text-lg mb-10 leading-relaxed">Our administrative helpdesk is available Monday through Friday for in-person consultations or digital support regarding any complex queries.</p>
                         <div className="flex flex-wrap gap-6">
                             <button className="px-8 py-4 bg-tertiary-fixed text-black font-bold tracking-widest uppercase rounded-full hover:bg-white transition-colors text-xs">Contact Support</button>
