@@ -89,12 +89,17 @@ export default function Navbar() {
                         <Link
                             key={link.path}
                             to={link.path}
+                            onClick={() => setMenuOpen(false)}
                             className={`text-2xl font-serif tracking-tight border-b border-transparent hover:border-secondary transition-all ${location.pathname === link.path ? 'text-secondary font-bold scale-110' : 'text-white'}`}
                         >
                             {link.name}
                         </Link>
                     ))}
-                    <Link to="/admissions" className="mt-4 bg-secondary text-white px-10 py-4 rounded-full text-sm font-bold uppercase tracking-widest">
+                    <Link
+                        to="/admissions"
+                        onClick={() => setMenuOpen(false)}
+                        className="mt-4 bg-secondary text-white px-10 py-4 rounded-full text-sm font-bold uppercase tracking-widest"
+                    >
                         Apply Now
                     </Link>
                 </div>
