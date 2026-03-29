@@ -39,6 +39,7 @@ export default function Navbar() {
         { name: 'Alumni', path: '/alumni' },
         { name: 'Coursera', path: '/career-academy' },
         { name: 'FAQs', path: '/faqs' },
+        { name: 'Disclosure', path: '/mandatory-disclosure' },
     ];
 
     return (

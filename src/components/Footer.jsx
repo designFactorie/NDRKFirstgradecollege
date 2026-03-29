@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
     return (
@@ -9,9 +10,9 @@ export default function Footer() {
                     <p>Hassan, Karnataka, India - 573201</p>
                 </div>
                 <div className="flex justify-center gap-8">
-                    <a className="hover:text-white transition-colors" href="#">Instagram</a>
+                    <Link className="hover:text-white transition-colors" to="/faqs">FAQs</Link>
+                    <Link className="hover:text-white transition-colors" to="/mandatory-disclosure">Disclosure</Link>
                     <a className="hover:text-white transition-colors" href="#">LinkedIn</a>
-                    <a className="hover:text-white transition-colors" href="#">Twitter</a>
                 </div>
                 <div className="text-center md:text-right">
                     <p>© 2026 NDRK First Grade College.</p>

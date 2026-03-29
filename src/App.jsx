@@ -12,6 +12,7 @@ import LifeAtNDRK from './pages/LifeAtNDRK';
 import Admissions from './pages/Admissions';
 import Coursera from './pages/Coursera';
 import FAQs from './pages/FAQs';
+import MandatoryDisclosure from './pages/MandatoryDisclosure';
 import Courses from './pages/Courses';
 import ScrollToTop from './components/ScrollToTop';
 
@@ -30,6 +31,7 @@ function App() {
         <Route path="/admissions" element={<Admissions />} />
         <Route path="/career-academy" element={<Coursera />} />
         <Route path="/faqs" element={<FAQs />} />
+        <Route path="/mandatory-disclosure" element={<MandatoryDisclosure />} />
       </Routes>
     </Router>
   );
