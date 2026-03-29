@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #00113a;
+  --color-secondary: #00677e;
+  --color-tertiary: #705d00;
+  --color-surface-container: #edeeef;
+  --color-surface-container-low: #f3f4f5;
+  --color-surface: #f8f9fa;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-high: #e0e1e2;
+  --color-surface-container-highest: #d1d2d3;
+  --color-surface-tint: #435b9f;
+  --color-primary-container: #002366;
+  --color-on-primary: #ffffff;
+  --color-outline-variant: #c5c6d2;
+  --color-secondary-container: #00d2fd;
+  --color-tertiary-fixed: #ffe16d;
+  --color-on-tertiary-fixed: #000000;
+  --color-secondary-fixed-dim: #3cd7ff;
+  --color-on-surface: #191c1d;
+  --font-headline: "Rubik", "serif";
+  --font-body: "Manrope", "sans-serif";
+}
+
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+@layer utilities {
+  .snap-y-container {
+    /* Now handled by html */
+  }
+
+  .snap-section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .glass-panel {
+    background: rgba(0, 17, 58, 0.4);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  }
+
+  .vertical-line {
+    width: 1px;
+    height: 100px;
+    background: linear-gradient(to bottom, transparent, white, transparent);
+  }
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}

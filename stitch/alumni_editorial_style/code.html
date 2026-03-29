@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;family=Rubik:wght@300..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#00113a",
+              "on-tertiary": "#ffffff",
+              "on-secondary": "#ffffff",
+              "surface-container-highest": "#e1e3e4",
+              "primary-container": "#002366",
+              "surface-dim": "#d9dadb",
+              "error": "#ba1a1a",
+              "on-tertiary-fixed-variant": "#544600",
+              "background": "#f8f9fa",
+              "on-surface": "#191c1d",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary-container": "#005669",
+              "on-background": "#191c1d",
+              "secondary-container": "#00d2fd",
+              "on-tertiary-fixed": "#221b00",
+              "surface-variant": "#e1e3e4",
+              "surface-container-high": "#e7e8e9",
+              "surface-container": "#edeeef",
+              "outline": "#757682",
+              "on-tertiary-container": "#4c3f00",
+              "inverse-primary": "#b3c5ff",
+              "secondary-fixed-dim": "#3cd7ff",
+              "tertiary": "#705d00",
+              "outline-variant": "#c5c6d2",
+              "inverse-on-surface": "#f0f1f2",
+              "surface-tint": "#435b9f",
+              "surface-bright": "#f8f9fa",
+              "on-primary-container": "#758dd5",
+              "primary-fixed": "#dbe1ff",
+              "tertiary-fixed-dim": "#e9c400",
+              "secondary-fixed": "#b4ebff",
+              "primary-fixed-dim": "#b3c5ff",
+              "tertiary-container": "#c9a900",
+              "on-primary-fixed-variant": "#2a4386",
+              "on-error-container": "#93000a",
+              "on-surface-variant": "#444650",
+              "on-secondary-fixed": "#001f27",
+              "on-error": "#ffffff",
+              "surface-container-low": "#f3f4f5",
+              "secondary": "#00677e",
+              "tertiary-fixed": "#ffe16d",
+              "on-secondary-fixed-variant": "#004e5f",
+              "on-primary": "#ffffff",
+              "surface": "#f8f9fa",
+              "inverse-surface": "#2e3132",
+              "on-primary-fixed": "#00174a",
+              "error-container": "#ffdad6"
+            },
+            fontFamily: {
+              "headline": ["Rubik", "sans-serif"],
+              "serif-display": ["Newsreader", "serif"],
+              "body": ["Manrope", "sans-serif"],
+              "label": ["Manrope", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-shadow {
+            box-shadow: 0px 20px 40px rgba(25, 28, 29, 0.06);
+        }
+        .glass-nav {
+            background-color: rgba(67, 91, 159, 0.08);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopNavBar -->
+<header class="docked full-width top-0 sticky z-50 bg-slate-50/90 backdrop-blur-xl tonal-shift">
+<nav class="flex justify-between items-center max-w-7xl mx-auto px-8 py-4 w-full">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-serif-display font-bold text-blue-900">NDRK First Grade College</span>
+<div class="hidden md:flex gap-6">
+<a class="text-slate-600 font-medium hover:text-blue-800 transition-colors tracking-widest uppercase text-[10px]" href="#">Home</a>
+<a class="text-slate-600 font-medium hover:text-blue-800 transition-colors tracking-widest uppercase text-[10px]" href="#">About</a>
+<a class="text-slate-600 font-medium hover:text-blue-800 transition-colors tracking-widest uppercase text-[10px]" href="#">Academics</a>
+<a class="text-slate-600 font-medium hover:text-blue-800 transition-colors tracking-widest uppercase text-[10px]" href="#">Life at NDRK</a>
+<a class="text-slate-600 font-medium hover:text-blue-800 transition-colors tracking-widest uppercase text-[10px]" href="#">Admissions</a>
+<a class="text-blue-900 font-bold border-b-2 border-yellow-600 pb-1 tracking-widest uppercase text-[10px]" href="#">Alumni</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<a class="hidden lg:block text-slate-600 hover:text-yellow-600 text-[11px] font-bold uppercase tracking-widest" href="#">Coursera Academy</a>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-bold text-xs uppercase tracking-widest hover:scale-95 transition-transform">Apply Now</button>
+</div>
+</nav>
+</header>
+<main>
+<!-- Hero Section: Modern Editorial Asymmetry -->
+<section class="relative min-h-[819px] flex items-center overflow-hidden bg-surface">
+<div class="max-w-7xl mx-auto px-8 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-7 z-10">
+<span class="inline-block px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed text-[10px] font-bold tracking-[0.2em] uppercase rounded-sm mb-6">Network of Excellence</span>
+<h1 class="font-serif-display text-7xl md:text-8xl text-primary leading-[0.9] -tracking-tight mb-8">
+                        A Global <br/>
+<span class="italic text-secondary">Network</span> of <br/>
+                        Excellence.
+                    </h1>
+<p class="text-on-surface-variant text-lg max-w-lg mb-10 leading-relaxed">
+                        Our graduates are architects of the future, leading industries and redefining standards across six continents. Welcome back to the legacy.
+                    </p>
+<div class="flex gap-6 items-center">
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-4 rounded-full font-bold text-sm tracking-widest uppercase hover:opacity-90 transition-opacity editorial-shadow">Join The Portal</button>
+<button class="flex items-center gap-2 text-secondary font-bold text-xs tracking-widest uppercase group">
+                            Explore Stories 
+                            <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="lg:col-span-5 relative">
+<div class="aspect-[4/5] rounded-xl overflow-hidden editorial-shadow rotate-2 hover:rotate-0 transition-transform duration-500">
+<img alt="Alumni group" class="w-full h-full object-cover grayscale-[20%] contrast-[1.1]" data-alt="Modern professional alumni group in an architectural university setting with clean lines and warm natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCJA2DoEn-LVVvDjJAW9ntBE4z0BNYaQrYGZzpFDdSRg7hIyPwdzIdVFjb6OwCub3qTb0XVHROEfvyN-4wZobj_N1AmgO4j1zIo3atPrDx3WMQQB0TQqyJczCyAtwSULt8bE3D8uL3T8FdDe8pdZmts2PbFSiNRcjvLWfDSJ33Apsjc_bZQe2LrMHoSV3tZCqLsKGyqCLw53Bocr1xz_no0d5z_XafXuoRl2HJHRGi0j2_JN0sz_sLOFN5x0-PNj_mtCLtddqOD8g4"/>
+</div>
+<div class="absolute -bottom-8 -left-8 bg-surface-container-lowest p-6 rounded-xl editorial-shadow hidden md:block max-w-[240px]">
+<p class="font-serif-display text-2xl text-primary italic mb-2">15,000+</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest font-bold">Active Alumni Members Across 45 Countries</p>
+</div>
+</div>
+</div>
+<!-- Decorative Background Element -->
+<div class="absolute top-0 right-0 w-1/3 h-full bg-surface-container-low -z-0 translate-x-1/4"></div>
+</section>
+<!-- Alumni in News: Bento Grid Style -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex justify-between items-end mb-16">
+<div>
+<h2 class="font-serif-display text-5xl text-primary mb-4">Alumni in News</h2>
+<p class="text-on-surface-variant max-w-md">Celebrating the milestones and breakthroughs of our distinguished graduates.</p>
+</div>
+<button class="text-primary font-bold text-xs tracking-widest uppercase border-b border-primary/20 pb-1">View All Highlights</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Feature 1 -->
+<div class="md:col-span-2 group relative overflow-hidden rounded-xl bg-primary aspect-[16/9] editorial-shadow">
+<img alt="Ananya Sharma" class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" data-alt="Professional woman in a high-tech corporate office environment, looking confident and smiling softly" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYd1F5nxjwk6_anlRNkuo1ybJ6Reu3RK90i5rfYKOiMZ85asWTepVafqADNIHbap1VNsnr-GXSRJshyLpA7z5LCyBR18p3zvE7T1fhIGc65RILBcw9rQ4jr91iyt419m5IQ-BQ5zzSxwbyTXvFg4oxHw8IAGWtcKloNxajG7TpTifc6oxGgp3-7aoIBOvfaAJNJM-vKt9ec1Du766miqd429fVRceg9aYmAuJnFs0cNas7PTw8Vp1khVORSG01rmBpi8dyVcMjs801"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-transparent p-10 flex flex-col justify-end">
+<span class="text-tertiary-fixed text-[10px] font-bold tracking-widest uppercase mb-4">Technology Leadership</span>
+<h3 class="text-white font-serif-display text-4xl mb-2">Ananya Sharma @ Tech Giant</h3>
+<p class="text-slate-300 max-w-md mb-6">Pioneering AI-driven sustainable solutions for smart city architectures in the Silicon Valley.</p>
+<a class="text-white flex items-center gap-2 font-bold text-xs uppercase tracking-widest" href="#">Read Article <span class="material-symbols-outlined text-sm">open_in_new</span></a>
+</div>
+</div>
+<!-- Feature 2 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl editorial-shadow flex flex-col">
+<div class="w-20 h-20 rounded-full overflow-hidden mb-6 ring-4 ring-surface-container">
+<img alt="Hassan" class="w-full h-full object-cover" data-alt="Distinguished professional man in a formal suit with a neutral professional background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8zuunmWEJqcBdUwkWPlNAUnySxAFcEUfRaCFLCbbClEwU8aAN9_GNGNSOO1lUhbjCE-7VPn0o4UdzLBff-bbFkeC2iTtTgMU3i9dkLq6vT9yDIlHthEV_1ormgQ3VSUZYE4RrrwFY2mRfYD8rCrjF5ga5rBYxCaeAmKBe0kU5DdCkwKFzImnQHrZJLS9uwpvDii1MCnA63aC0Hxn0lhZWuKip7xtjDKO3PNxmJTwd830nFHiVuv-D3qwOskL8s1-zW2_RTVc4g0o4"/>
+</div>
+<span class="text-secondary text-[10px] font-bold tracking-widest uppercase mb-4">Finance &amp; Strategy</span>
+<h3 class="text-primary font-serif-display text-3xl mb-4">Hassan: Leader in Finance</h3>
+<p class="text-on-surface-variant text-sm mb-8 leading-relaxed">Named Top 40 Under 40, Hassan is revolutionizing fintech equity in the MENA region.</p>
+<div class="mt-auto">
+<a class="text-primary flex items-center gap-2 font-bold text-xs uppercase tracking-widest" href="#">Full Profile <span class="material-symbols-outlined text-sm">arrow_outward</span></a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Alumni Events: Tonal Layering -->
+<section class="py-24 bg-surface">
+<div class="max-w-7xl mx-auto px-8">
+<div class="text-center mb-20">
+<h2 class="font-serif-display text-5xl text-primary mb-4 italic">Upcoming Gatherings</h2>
+<div class="w-24 h-1 bg-tertiary mx-auto"></div>
+</div>
+<div class="space-y-6">
+<!-- Event 1 -->
+<div class="flex flex-col md:flex-row items-center gap-8 p-1 rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors group">
+<div class="w-full md:w-64 aspect-video rounded-lg overflow-hidden shrink-0">
+<img alt="Global Meet" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Elegant evening gala hall with warm lighting and sophisticated event decor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsBjC_53bWKzkOwAoeOuIN5yvFv3gY3N1gwWOjzrbgft8AUNGS_9G_jAc0tegQk12sLzT1WREBOY0reYNh8ssc3N14XU0s_T8SoRXGSBTjRgAt6-SrS5wO_-AXgC-15godh9IwgCYrRCBNjL9f-nkF_Rw0ZyoOKy8jV_IRVCQc2M2HlUwPkNZJYrZagU9t9qKn-MD80Vd9Aov8BfozGLcO5m9jY9AViD_Xwao92JPda6xefYeJKNiGb8BrkkRER-Ib9pTsS__GC1RQ"/>
+</div>
+<div class="flex-grow py-4 px-2">
+<div class="flex items-center gap-4 mb-2">
+<span class="text-secondary font-bold text-[10px] tracking-widest uppercase">Dec 15, 2024</span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+<span class="text-on-surface-variant text-[10px] font-bold tracking-widest uppercase">London, UK</span>
+</div>
+<h3 class="font-serif-display text-3xl text-primary mb-2">Global Meet 2024</h3>
+<p class="text-on-surface-variant text-sm">Our flagship international networking event connecting leaders across European hubs.</p>
+</div>
+<div class="px-8 shrink-0">
+<button class="bg-primary-container text-on-primary-container px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition-colors">RSVP Now</button>
+</div>
+</div>
+<!-- Event 2 -->
+<div class="flex flex-col md:flex-row items-center gap-8 p-1 rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors group">
+<div class="w-full md:w-64 aspect-video rounded-lg overflow-hidden shrink-0">
+<img alt="Mentor Series" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Modern workshop setting with people engaged in professional conversation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxoEiCuQG_LsHmJFCcMJZyFs0vdjO_nrvYNEvYAqDMhP5lt7DGS8KD_79navw3KuIOMfBH4JRoqc7j6INZbJc4aKq7PFWUKwymoAsfXmzhWOKm0GoaWf6LNTirtDvSErksavh96QpIQY3gSmfz_X7l8KHsbWC20h17_DH0ih-z49BPDriUnZG7LCn7NeQOt3BC2ITIzqGnasWXBLsAbHjlwQqG_gbB2QGphDB5N9EI3jQIY8ZppC3StMxJXXVBLaMTjUiEZ7o7uaP4"/>
+</div>
+<div class="flex-grow py-4 px-2">
+<div class="flex items-center gap-4 mb-2">
+<span class="text-secondary font-bold text-[10px] tracking-widest uppercase">Weekly</span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+<span class="text-on-surface-variant text-[10px] font-bold tracking-widest uppercase">Virtual Hub</span>
+</div>
+<h3 class="font-serif-display text-3xl text-primary mb-2">Mentor Series</h3>
+<p class="text-on-surface-variant text-sm">One-on-one sessions where seniors guide current students through career transitions.</p>
+</div>
+<div class="px-8 shrink-0">
+<button class="outline outline-1 outline-primary text-primary px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition-colors">Join Portal</button>
+</div>
+</div>
+<!-- Event 3 -->
+<div class="flex flex-col md:flex-row items-center gap-8 p-1 rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors group">
+<div class="w-full md:w-64 aspect-video rounded-lg overflow-hidden shrink-0">
+<img alt="Homecoming" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="High-end collegiate celebration with fireworks and festive atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1kNnv_nO4_6l7XfBOV0eAAgCQPyRCGQob7DB19bWP1hhjULxBj9JSICz4JPkQpsNSw2IHwnZxUyBZDXJ86UEzCC2fCb5NqcGfWpIWV364lyU3XOz3EMKj_u8Vpbg9CGPW0aMqWfetMv27DoldOHPyABl0p-JUUJerWNIFLnsbEw3UymWg7-NtoKpt_8QebPlXe-lw1GEcQXZiFokleywsrnL5EyFavXCRkdLqP64Ez1D02rn428_3q6CiYGZ2kbTVCp0iXuNMA5EV"/>
+</div>
+<div class="flex-grow py-4 px-2">
+<div class="flex items-center gap-4 mb-2">
+<span class="text-secondary font-bold text-[10px] tracking-widest uppercase">Jan 05, 2025</span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+<span class="text-on-surface-variant text-[10px] font-bold tracking-widest uppercase">Main Campus</span>
+</div>
+<h3 class="font-serif-display text-3xl text-primary mb-2">Homecoming Gala</h3>
+<p class="text-on-surface-variant text-sm">The annual reunion dinner and excellence awards ceremony under the campus oaks.</p>
+</div>
+<div class="px-8 shrink-0">
+<button class="bg-primary-container text-on-primary-container px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition-colors">Book Ticket</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials: High Contrast Blue/Gold -->
+<section class="py-32 bg-primary text-on-primary relative overflow-hidden">
+<!-- Decorative Large Text -->
+<div class="absolute -top-24 -left-12 font-serif-display text-[20rem] opacity-5 select-none pointer-events-none italic">Voices</div>
+<div class="max-w-5xl mx-auto px-8 relative z-10 text-center">
+<span class="material-symbols-outlined text-6xl text-tertiary mb-8" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<h2 class="font-serif-display text-4xl md:text-6xl mb-12 leading-tight">
+                    "NDRK didn't just teach; they mentored. The community here gave me the <span class="text-tertiary italic">audacity</span> to lead in global finance."
+                </h2>
+<div class="flex flex-col items-center">
+<p class="text-tertiary-fixed font-bold tracking-[0.3em] uppercase text-sm mb-2">Vikram Malhotra</p>
+<p class="text-on-primary-container text-xs uppercase tracking-widest">Class of 2012 • Managing Director, Global Equity</p>
+</div>
+<div class="flex justify-center gap-4 mt-16">
+<button class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Call to Action -->
+<section class="py-24 bg-surface">
+<div class="max-w-4xl mx-auto px-8 bg-surface-container-lowest p-16 rounded-xl text-center editorial-shadow">
+<h3 class="font-serif-display text-4xl text-primary mb-6">Stay Connected to Your Roots</h3>
+<p class="text-on-surface-variant mb-10 text-lg">Update your profile to receive exclusive invitations, career opportunities, and the quarterly Alumni Journal.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<input class="bg-surface-container px-6 py-4 rounded-full border-none ring-1 ring-outline-variant/30 focus:ring-secondary w-full sm:w-72" placeholder="Email Address" type="email"/>
+<button class="bg-primary text-on-primary px-10 py-4 rounded-full font-bold uppercase tracking-widest text-xs">Join Network</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-blue-950 dark:bg-black w-full relative">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto px-8 py-20 w-full">
+<div class="md:col-span-1">
+<span class="text-3xl font-serif-display text-white mb-6 block italic">NDRK</span>
+<p class="text-slate-300 text-sm leading-relaxed mb-8">Empowering futures since 1978. A tradition of excellence, a legacy of impact.</p>
+<div class="flex gap-4">
+<a class="text-yellow-500 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-yellow-500 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="text-yellow-500 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">mail</span></a>
+</div>
+</div>
+<div>
+<h4 class="text-yellow-500 font-bold tracking-wider uppercase text-xs mb-8">Resources</h4>
+<ul class="space-y-4">
+<li><a class="text-slate-300 hover:text-yellow-500 transition-colors text-sm hover:translate-x-1 inline-block transition-transform" href="#">Admissions</a></li>
+<li><a class="text-slate-300 hover:text-yellow-500 transition-colors text-sm hover:translate-x-1 inline-block transition-transform" href="#">Coursera Career Academy</a></li>
+<li><a class="text-slate-300 hover:text-yellow-500 transition-colors text-sm hover:translate-x-1 inline-block transition-transform" href="#">Alumni Network</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-yellow-500 font-bold tracking-wider uppercase text-xs mb-8">Campus Life</h4>
+<ul class="space-y-4">
+<li><a class="text-slate-300 hover:text-yellow-500 transition-colors text-sm hover:translate-x-1 inline-block transition-transform" href="#">Life at NDRK</a></li>
+<li><a class="text-slate-300 hover:text-yellow-500 transition-colors text-sm hover:translate-x-1 inline-block transition-transform" href="#">FAQs &amp; Disclosures</a></li>
+<li><a class="text-slate-300 hover:text-yellow-500 transition-colors text-sm hover:translate-x-1 inline-block transition-transform" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-yellow-500 font-bold tracking-wider uppercase text-xs mb-8">Newsletter</h4>
+<p class="text-slate-300 text-[10px] uppercase tracking-widest mb-4">Subscribe for Academic Insights</p>
+<div class="flex border-b border-slate-700 pb-2">
+<input class="bg-transparent border-none text-white text-sm focus:ring-0 w-full placeholder:text-slate-600" placeholder="Enter email" type="text"/>
+<button class="text-yellow-500"><span class="material-symbols-outlined">arrow_right_alt</span></button>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 py-8 border-t border-blue-900/50 flex flex-col md:flex-row justify-between items-center gap-4">
+<span class="text-slate-500 text-[10px] tracking-widest uppercase">© 2024 NDRK First Grade College. All Rights Reserved.</span>
+<div class="flex gap-8">
+<span class="text-slate-500 text-[10px] tracking-widest uppercase cursor-pointer hover:text-yellow-500">Cookie Policy</span>
+<span class="text-slate-500 text-[10px] tracking-widest uppercase cursor-pointer hover:text-yellow-500">Terms of Service</span>
+</div>
+</div>
+</footer>
+</body></html>

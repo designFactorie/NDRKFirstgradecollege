@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;family=Rubik:wght@300..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#00113a",
+              "on-tertiary": "#ffffff",
+              "on-secondary": "#ffffff",
+              "surface-container-highest": "#e1e3e4",
+              "primary-container": "#002366",
+              "surface-dim": "#d9dadb",
+              "error": "#ba1a1a",
+              "on-tertiary-fixed-variant": "#544600",
+              "background": "#f8f9fa",
+              "on-surface": "#191c1d",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary-container": "#005669",
+              "on-background": "#191c1d",
+              "secondary-container": "#00d2fd",
+              "on-tertiary-fixed": "#221b00",
+              "surface-variant": "#e1e3e4",
+              "surface-container-high": "#e7e8e9",
+              "surface-container": "#edeeef",
+              "outline": "#757682",
+              "on-tertiary-container": "#4c3f00",
+              "inverse-primary": "#b3c5ff",
+              "secondary-fixed-dim": "#3cd7ff",
+              "tertiary": "#705d00",
+              "outline-variant": "#c5c6d2",
+              "inverse-on-surface": "#f0f1f2",
+              "surface-tint": "#435b9f",
+              "surface-bright": "#f8f9fa",
+              "on-primary-container": "#758dd5",
+              "primary-fixed": "#dbe1ff",
+              "tertiary-fixed-dim": "#e9c400",
+              "secondary-fixed": "#b4ebff",
+              "primary-fixed-dim": "#b3c5ff",
+              "tertiary-container": "#c9a900",
+              "on-primary-fixed-variant": "#2a4386",
+              "on-error-container": "#93000a",
+              "on-surface-variant": "#444650",
+              "on-secondary-fixed": "#001f27",
+              "on-error": "#ffffff",
+              "surface-container-low": "#f3f4f5",
+              "secondary": "#00677e",
+              "tertiary-fixed": "#ffe16d",
+              "on-secondary-fixed-variant": "#004e5f",
+              "on-primary": "#ffffff",
+              "surface": "#f8f9fa",
+              "inverse-surface": "#2e3132",
+              "on-primary-fixed": "#00174a",
+              "error-container": "#ffdad6"
+            },
+            fontFamily: {
+              "headline": ["Rubik"],
+              "body": ["Manrope"],
+              "label": ["Manrope"],
+              "serif": ["Newsreader"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-mask {
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-tertiary-fixed selection:text-on-tertiary-fixed">
+<!-- TopNavBar -->
+<nav class="bg-slate-50/90 dark:bg-slate-950/90 backdrop-blur-xl docked full-width top-0 sticky z-50 tonal-shift bg-slate-100 dark:bg-slate-900">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-8 py-4 w-full">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-serif font-bold text-blue-900 dark:text-yellow-500">NDRK First Grade College</span>
+<div class="hidden lg:flex items-center gap-6">
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-800 transition-colors tracking-widest uppercase text-xs" href="#">Home</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-800 transition-colors tracking-widest uppercase text-xs" href="#">About</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-800 transition-colors tracking-widest uppercase text-xs" href="#">Academics</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-800 transition-colors tracking-widest uppercase text-xs" href="#">Life at NDRK</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-800 transition-colors tracking-widest uppercase text-xs" href="#">Admissions</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-800 transition-colors tracking-widest uppercase text-xs" href="#">Alumni</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden md:block px-5 py-2 text-sm font-bold tracking-widest uppercase text-blue-900 border border-blue-900/20 rounded-full hover:bg-blue-50 transition-all">Coursera Academy</button>
+<button class="px-6 py-2 bg-primary text-white text-sm font-bold tracking-widest uppercase rounded-full hover:bg-primary-container transition-all">Apply Now</button>
+</div>
+</div>
+</nav>
+<main class="min-h-screen">
+<!-- Hero Header -->
+<header class="relative pt-24 pb-32 overflow-hidden">
+<div class="max-w-7xl mx-auto px-8 relative z-10">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-12">
+<div class="max-w-2xl">
+<span class="inline-block px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed font-label text-[10px] tracking-[0.2em] font-bold uppercase rounded-sm mb-6">Transparency &amp; Guidance</span>
+<h1 class="font-serif italic text-6xl md:text-8xl leading-[0.9] text-primary mb-8">FAQs &amp; Mandatory Disclosure</h1>
+<p class="font-body text-xl text-on-surface-variant leading-relaxed opacity-80">Access institutional reports, regulatory filings, and find answers to common inquiries regarding the NDRK academic ecosystem.</p>
+</div>
+<div class="hidden md:block pb-4">
+<div class="flex flex-col items-end">
+<span class="font-serif text-3xl italic text-tertiary">2024-25</span>
+<span class="font-label text-xs tracking-widest text-outline uppercase">Academic Cycle</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Background Graphic -->
+<div class="absolute top-0 right-0 w-1/3 h-full bg-surface-container-low editorial-mask -z-10"></div>
+</header>
+<!-- Mandatory Disclosure Section -->
+<section class="bg-surface-container-low py-24">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+<div class="lg:col-span-4">
+<h2 class="font-headline font-bold text-4xl text-primary mb-6">Mandatory Disclosure</h2>
+<p class="text-on-surface-variant mb-12">As part of our commitment to transparency and regulatory compliance, NDRK First Grade College maintains public access to all essential institutional records.</p>
+<div class="space-y-4">
+<div class="p-6 bg-surface-container-lowest rounded-xl flex items-center justify-between group cursor-pointer hover:bg-primary hover:text-white transition-all duration-300">
+<div>
+<span class="block font-label text-[10px] tracking-widest text-outline uppercase group-hover:text-primary-fixed mb-1">Public Record</span>
+<span class="font-bold text-lg font-headline">Institution Audit</span>
+</div>
+<span class="material-symbols-outlined text-tertiary group-hover:text-white" data-icon="download">download</span>
+</div>
+<div class="p-6 bg-surface-container-lowest rounded-xl flex items-center justify-between group cursor-pointer hover:bg-primary hover:text-white transition-all duration-300">
+<div>
+<span class="block font-label text-[10px] tracking-widest text-outline uppercase group-hover:text-primary-fixed mb-1">Human Resources</span>
+<span class="font-bold text-lg font-headline">Faculty Registry</span>
+</div>
+<span class="material-symbols-outlined text-tertiary group-hover:text-white" data-icon="download">download</span>
+</div>
+<div class="p-6 bg-surface-container-lowest rounded-xl flex items-center justify-between group cursor-pointer hover:bg-primary hover:text-white transition-all duration-300">
+<div>
+<span class="block font-label text-[10px] tracking-widest text-outline uppercase group-hover:text-primary-fixed mb-1">Annual Safety</span>
+<span class="font-bold text-lg font-headline">Campus Safety Report</span>
+</div>
+<span class="material-symbols-outlined text-tertiary group-hover:text-white" data-icon="download">download</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-8">
+<div class="relative rounded-2xl overflow-hidden aspect-[16/9] shadow-2xl">
+<img class="object-cover w-full h-full" data-alt="Modern high-end library interior with sunlight streaming through large windows illuminating rows of academic books and study tables" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoWJIsi_9CdUYV4VFQZTRngpTW9Xbvl6ICGwddttcDq4eyvLX6jO6Pe7Gq_-7XlqBck0q73DB2hVnl4PGeTKqyepoaJeE3-oj7_PC0yMRNLafnBkBQkyAAsZ2wucyHLuNLIEBfx--gxTmNeb8aHWu_K0apwSAGzBQBeLWC_ULKhpmxb7EPpLmlLAJC1RrL_LWq32s9DHr3sDiUYu_FyijsEzyxxokH09KntuP1Cz-hx71bzUVQ0YVABe_9onUdzS6mnt5t_rdPx_Io"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent"></div>
+<div class="absolute bottom-8 left-8 text-white">
+<span class="font-serif italic text-2xl">Institutional Excellence through Accountability</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Common Queries Section -->
+<section class="py-24 bg-surface">
+<div class="max-w-4xl mx-auto px-8">
+<div class="text-center mb-20">
+<h2 class="font-serif italic text-5xl text-primary mb-4">Common Queries</h2>
+<div class="h-1 w-24 bg-tertiary-container mx-auto"></div>
+</div>
+<!-- Accordion Group -->
+<div class="space-y-6">
+<!-- Admissions Category -->
+<div class="border-b border-outline-variant/30 pb-6">
+<div class="flex items-center gap-4 mb-4">
+<span class="material-symbols-outlined text-secondary" data-icon="school">school</span>
+<h3 class="font-headline font-bold text-xl uppercase tracking-wider text-secondary">Admissions</h3>
+</div>
+<div class="space-y-4">
+<details class="group bg-surface-container-lowest rounded-xl">
+<summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+<span class="font-bold text-on-surface font-headline">What is the application deadline for the 2024 academic session?</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-on-surface-variant leading-relaxed">
+                                    General applications for the undergraduate program close on August 15th. We recommend early submission to ensure housing priority and eligibility for merit-based scholarships.
+                                </div>
+</details>
+</div>
+</div>
+<!-- Academics Category -->
+<div class="border-b border-outline-variant/30 pb-6">
+<div class="flex items-center gap-4 mb-4">
+<span class="material-symbols-outlined text-secondary" data-icon="menu_book">menu_book</span>
+<h3 class="font-headline font-bold text-xl uppercase tracking-wider text-secondary">Academics</h3>
+</div>
+<div class="space-y-4">
+<details class="group bg-surface-container-lowest rounded-xl">
+<summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+<span class="font-bold text-on-surface font-headline">Does the college offer credit transfers for online certifications?</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-on-surface-variant leading-relaxed">
+                                    Yes, through our partnership with the Coursera Career Academy, specific certifications are eligible for credit alignment within our elective frameworks. Please consult the Dean's office for the approved list of courses.
+                                </div>
+</details>
+<details class="group bg-surface-container-lowest rounded-xl">
+<summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+<span class="font-bold text-on-surface font-headline">How is the faculty-to-student ratio structured?</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-on-surface-variant leading-relaxed">
+                                    We maintain a rigorous 1:20 ratio to ensure personalized mentorship and active engagement in seminar-style learning environments.
+                                </div>
+</details>
+</div>
+</div>
+<!-- Financial Aid Category -->
+<div class="pb-6">
+<div class="flex items-center gap-4 mb-4">
+<span class="material-symbols-outlined text-secondary" data-icon="payments">payments</span>
+<h3 class="font-headline font-bold text-xl uppercase tracking-wider text-secondary">Financial Aid</h3>
+</div>
+<div class="space-y-4">
+<details class="group bg-surface-container-lowest rounded-xl">
+<summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+<span class="font-bold text-on-surface font-headline">Are there merit-based scholarships available for out-of-state students?</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-on-surface-variant leading-relaxed">
+                                    NDRK offers the 'President's Excellence Grant' which covers up to 40% of tuition for students who maintain a GPA above 3.8 and demonstrate leadership potential, regardless of residency.
+                                </div>
+</details>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Support Call to Action -->
+<section class="mb-24 px-8">
+<div class="max-w-7xl mx-auto rounded-3xl bg-primary-container p-12 md:p-20 relative overflow-hidden">
+<div class="relative z-10 max-w-2xl">
+<h2 class="font-serif italic text-4xl md:text-5xl text-white mb-6">Still have questions?</h2>
+<p class="text-primary-fixed text-lg mb-10 leading-relaxed">Our administrative helpdesk is available Monday through Friday for in-person consultations or digital support regarding any complex queries.</p>
+<div class="flex flex-wrap gap-6">
+<button class="px-8 py-4 bg-secondary-container text-on-secondary-container font-bold tracking-widest uppercase rounded-full hover:scale-105 transition-transform">Contact Support</button>
+<button class="px-8 py-4 border border-outline-variant/30 text-white font-bold tracking-widest uppercase rounded-full hover:bg-white/10 transition-colors">Campus Directory</button>
+</div>
+</div>
+<!-- Abstract Texture -->
+<div class="absolute right-0 top-0 w-1/2 h-full opacity-20 pointer-events-none">
+<svg class="w-full h-full" viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 400C150 400 250 150 400 0V400H0Z" fill="#ffe16d"></path>
+</svg>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-blue-950 dark:bg-black text-yellow-500 dark:text-yellow-600 full-width relative border-t-0">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto px-8 py-20 w-full">
+<div class="md:col-span-1">
+<span class="text-3xl font-serif text-white mb-6 block">NDRK First Grade College</span>
+<p class="font-body text-slate-300 font-light text-sm leading-relaxed mb-6">Elevating academic standards through a blend of heritage, innovation, and unwavering transparency.</p>
+</div>
+<div>
+<span class="block font-label text-[10px] tracking-wider text-slate-400 uppercase mb-6">Admissions</span>
+<ul class="space-y-4">
+<li><a class="text-slate-300 hover:text-yellow-500 transition-colors font-body font-light text-sm hover:translate-x-1 inline-block" href="#">Admissions 2024</a></li>
+<li><a class="text-slate-300 hover:text-yellow-500 transition-colors font-body font-light text-sm hover:translate-x-1 inline-block" href="#">Scholarships</a></li>
+<li><a class="text-slate-300 hover:text-yellow-500 transition-colors font-body font-light text-sm hover:translate-x-1 inline-block" href="#">Campus Tour</a></li>
+</ul>
+</div>
+<div>
+<span class="block font-label text-[10px] tracking-wider text-slate-400 uppercase mb-6">Institutional</span>
+<ul class="space-y-4">
+<li><a class="text-white underline font-body font-light text-sm hover:translate-x-1 inline-block" href="#">FAQs &amp; Disclosures</a></li>
+<li><a class="text-slate-300 hover:text-yellow-500 transition-colors font-body font-light text-sm hover:translate-x-1 inline-block" href="#">Privacy Policy</a></li>
+<li><a class="text-slate-300 hover:text-yellow-500 transition-colors font-body font-light text-sm hover:translate-x-1 inline-block" href="#">Alumni Network</a></li>
+</ul>
+</div>
+<div>
+<span class="block font-label text-[10px] tracking-wider text-slate-400 uppercase mb-6">Stay Connected</span>
+<div class="flex gap-4 mb-8">
+<span class="material-symbols-outlined p-2 border border-slate-700 rounded-full cursor-pointer hover:bg-yellow-500 hover:text-blue-950 transition-all" data-icon="alternate_email">alternate_email</span>
+<span class="material-symbols-outlined p-2 border border-slate-700 rounded-full cursor-pointer hover:bg-yellow-500 hover:text-blue-950 transition-all" data-icon="location_on">location_on</span>
+</div>
+<p class="text-slate-400 text-[10px] tracking-widest uppercase">© 2024 NDRK First Grade College. All Rights Reserved.</p>
+</div>
+</div>
+</footer>
+</body></html>
