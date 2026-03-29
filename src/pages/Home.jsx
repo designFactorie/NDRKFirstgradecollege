@@ -21,8 +21,8 @@ export default function Home() {
                 {/* Chapter 1 */}
                 <section className="md:snap-section min-h-screen md:h-screen flex items-center justify-center py-20 md:py-0" id="chapter-1">
                     <div className="absolute inset-0">
-                        <img className="w-full h-full object-cover grayscale brightness-50" alt="stately university building" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXSeCpXoD3Thp7ONIw8Owj8lQV0kJ9ewZ_AUinlW6_4D_u7gy1O1W3GQ0bSBOBd7Yh3sRr0-IFQjYiGAFj7BqhQoacFI4vDygTgT9LTYE0LlCMvFpH5Zd62IihtaZhB6fbzniWkIHLLEcrNKV63b9Q5KFt08Tl6DtshS_k0I_vFNnJhj71bp5OrIAbS7DFRkQ4lG5wATqirKTvX335ogSdwMoy1NK0iqdqOMx2y_QdEZLTKhTFy6PjmY8ue4c1Qp0bx-umNFjVZKXI" />
-                        <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-transparent to-primary/80"></div>
+                        <img className="w-full h-full object-cover brightness-75" alt="stately university building" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXSeCpXoD3Thp7ONIw8Owj8lQV0kJ9ewZ_AUinlW6_4D_u7gy1O1W3GQ0bSBOBd7Yh3sRr0-IFQjYiGAFj7BqhQoacFI4vDygTgT9LTYE0LlCMvFpH5Zd62IihtaZhB6fbzniWkIHLLEcrNKV63b9Q5KFt08Tl6DtshS_k0I_vFNnJhj71bp5OrIAbS7DFRkQ4lG5wATqirKTvX335ogSdwMoy1NK0iqdqOMx2y_QdEZLTKhTFy6PjmY8ue4c1Qp0bx-umNFjVZKXI" />
+                        <div className="absolute inset-0 bg-black/40"></div>
                     </div>
                     <div className="relative z-10 container mx-auto px-8 text-center">
                         <span className="text-secondary font-bold tracking-[0.4em] uppercase text-sm mb-6 block">Chapter I: The Beginning</span>
