@@ -19,32 +19,32 @@ export default function Home() {
 
             <main className="md:snap-y-container">
                 {/* Chapter 1 */}
-                <section className="md:snap-section min-h-screen md:h-screen flex items-center justify-center py-20 md:py-0" id="chapter-1">
-                    <div className="absolute inset-0">
+                <section className="relative md:snap-section min-h-screen lg:h-screen flex items-center justify-center py-20 lg:py-0 z-10 bg-primary" id="chapter-1">
+                    <div className="absolute inset-0 overflow-hidden">
                         <img className="w-full h-full object-cover brightness-75" alt="stately university building" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXSeCpXoD3Thp7ONIw8Owj8lQV0kJ9ewZ_AUinlW6_4D_u7gy1O1W3GQ0bSBOBd7Yh3sRr0-IFQjYiGAFj7BqhQoacFI4vDygTgT9LTYE0LlCMvFpH5Zd62IihtaZhB6fbzniWkIHLLEcrNKV63b9Q5KFt08Tl6DtshS_k0I_vFNnJhj71bp5OrIAbS7DFRkQ4lG5wATqirKTvX335ogSdwMoy1NK0iqdqOMx2y_QdEZLTKhTFy6PjmY8ue4c1Qp0bx-umNFjVZKXI" />
                         <div className="absolute inset-0 bg-black/40"></div>
                     </div>
-                    <div className="relative z-10 container mx-auto px-8 text-center">
+                    <div className="relative z-20 container mx-auto px-8 text-center">
                         <span className="text-secondary font-bold tracking-[0.4em] uppercase text-sm mb-6 block">Chapter I: The Beginning</span>
-                        <h1 className="font-headline text-4xl md:text-6xl font-bold mb-8 leading-tight text-glow">
+                        <h1 className="font-headline text-4xl md:text-6xl font-bold mb-8 leading-tight text-glow text-white">
                             Unlock Your Potential, <br />
                             <span className="text-secondary-fixed-dim italic">Excel at NDRK First Grade College.</span>
                         </h1>
                         <p className="text-xl md:text-2xl font-light max-w-2xl mx-auto text-slate-300">Where Dreams Meet Success!</p>
                         <div className="mt-16 flex flex-col items-center">
-                            <span className="material-symbols-outlined text-4xl animate-bounce">expand_more</span>
-                            <span className="text-xs uppercase tracking-widest mt-2">Scroll to Begin</span>
+                            <span className="material-symbols-outlined text-4xl animate-bounce text-white">expand_more</span>
+                            <span className="text-xs uppercase tracking-widest mt-2 text-white">Scroll to Begin</span>
                         </div>
                     </div>
                 </section>
 
                 {/* Chapter 2 */}
-                <section className="md:snap-section min-h-screen md:h-screen flex items-center py-20 md:py-0" id="chapter-2">
-                    <div className="absolute inset-0">
-                        <div className="absolute inset-0 bg-primary/90 z-10"></div>
+                <section className="relative md:snap-section min-h-screen lg:h-screen flex items-center py-20 lg:py-0 z-10 bg-primary" id="chapter-2">
+                    <div className="absolute inset-0 overflow-hidden">
+                        <div className="absolute inset-0 bg-primary/90 z-20"></div>
                         <img className="w-full h-full object-cover opacity-30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkBhFWRDoA7nBkBT-fy_dkc5yhxbasmWJy9tIOT-WxrqtGQlwh6ub05v2W0oVz668YEkgbUjd6UA9gr_ANVEDEYWaKfMRqs-H_ka87MiY3NnrgSxdvlrlGCCra8u_uKH6jiAIZIv2OwvEgonVHvvrxhJimX_nRP4i5lkRuOyc3OZlErm7yiXIuZfFB6y3HfUAcn6koH3c6xe89GNmy8piK-pm0_75XHajVGhAcnn0PLdVAbMctj-R4KgMzCR9sJL7n3h1QuXuGyxmD" />
                     </div>
-                    <div className="relative z-20 container mx-auto px-8">
+                    <div className="relative z-30 container mx-auto px-8 text-white">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                             <div>
                                 <span className="text-tertiary font-bold tracking-[0.4em] uppercase text-sm mb-6 block">Chapter II: The Foundation</span>
@@ -141,9 +141,11 @@ export default function Home() {
                     </div>
                 </section>
 
+                {/* Navbar (Placeholder if needed) */}
+
                 {/* Chapter 5 */}
-                <section className="md:snap-section min-h-screen md:h-screen flex items-start md:items-center justify-center py-24 md:py-0" id="chapter-5">
-                    <div className="absolute inset-0">
+                <section className="relative md:snap-section min-h-screen lg:h-screen flex items-start lg:items-center justify-center py-24 lg:py-0 z-10 bg-primary" id="chapter-5">
+                    <div className="absolute inset-0 overflow-hidden">
                         <img className="w-full h-full object-cover grayscale opacity-20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOTkVxLgJBv_TA3cxFpwGcReDHVoaOztRTVyKVSjrleqlGrroazL3EEJDMx-bJZvJ31BqYEOArVyY2DSqnUGMSOey8Plt9YTjyYJ9RcB4OcyCFEQ9UbJT6EuVNO5SFkCKNOKaEeLG7U8Zhy96xVVQb4mxMLKkgHI55x-Nl7ahMR1vGZhpCfmcN63d7CA9OPn3X5l_5TSlHMyI8SzT1W2dakKQD7mATsV8wKevTwYdrMyaXbH6fmw8g4Svqy-LK5526d6Dgb9q0gM9P" />
                     </div>
                     <div className="container mx-auto px-8 relative z-10 text-center max-w-5xl">

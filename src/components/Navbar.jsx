@@ -104,10 +104,6 @@ export default function Navbar() {
                     </Link>
                 </div>
 
-                {/* Decorative background logo */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none select-none overflow-hidden">
-                    <span className="text-[40vw] font-black tracking-tighter">NDRK</span>
-                </div>
             </div>
         </nav>
     );
