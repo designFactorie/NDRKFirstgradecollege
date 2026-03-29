@@ -23,7 +23,7 @@
   --font-body: "Manrope", "sans-serif";
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   html {
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
@@ -32,19 +32,24 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 @layer utilities {
   .snap-y-container {
-    /* Now handled by html */
+    /* Utility class for containers */
   }
 
   .snap-section {
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-    height: 100vh;
+    @media (min-width: 1024px) {
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      height: 100vh;
+      overflow: hidden;
+    }
+
     position: relative;
-    overflow: hidden;
+    min-height: 100vh;
   }
 
   .glass-panel {

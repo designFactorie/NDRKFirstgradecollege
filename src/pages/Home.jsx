@@ -74,7 +74,7 @@ export default function Home() {
                 </section>
 
                 {/* Chapter 3 */}
-                <section className="md:snap-section min-h-screen md:h-screen flex items-center py-20 md:py-0" id="chapter-3">
+                <section className="md:snap-section min-h-screen md:h-screen flex items-start md:items-center py-24 md:py-0" id="chapter-3">
                     <div className="container mx-auto px-8 relative z-10">
                         <span className="text-secondary font-bold tracking-[0.4em] uppercase text-sm mb-12 block text-center">Chapter III: The Pulse</span>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -110,7 +110,7 @@ export default function Home() {
                 </section>
 
                 {/* Chapter 4 */}
-                <section className="md:snap-section min-h-screen md:h-screen flex items-center bg-[#000a1e] py-20 md:py-0" id="chapter-4">
+                <section className="md:snap-section min-h-screen md:h-screen flex items-start md:items-center bg-[#000a1e] py-24 md:py-0" id="chapter-4">
                     <div className="container mx-auto px-8">
                         <div className="text-center mb-16">
                             <span className="text-tertiary font-bold tracking-[0.4em] uppercase text-sm mb-6 block">Chapter IV: The Pathways</span>
@@ -142,7 +142,7 @@ export default function Home() {
                 </section>
 
                 {/* Chapter 5 */}
-                <section className="md:snap-section min-h-screen md:h-screen flex items-center justify-center py-20 md:py-0" id="chapter-5">
+                <section className="md:snap-section min-h-screen md:h-screen flex items-start md:items-center justify-center py-24 md:py-0" id="chapter-5">
                     <div className="absolute inset-0">
                         <img className="w-full h-full object-cover grayscale opacity-20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOTkVxLgJBv_TA3cxFpwGcReDHVoaOztRTVyKVSjrleqlGrroazL3EEJDMx-bJZvJ31BqYEOArVyY2DSqnUGMSOey8Plt9YTjyYJ9RcB4OcyCFEQ9UbJT6EuVNO5SFkCKNOKaEeLG7U8Zhy96xVVQb4mxMLKkgHI55x-Nl7ahMR1vGZhpCfmcN63d7CA9OPn3X5l_5TSlHMyI8SzT1W2dakKQD7mATsV8wKevTwYdrMyaXbH6fmw8g4Svqy-LK5526d6Dgb9q0gM9P" />
                     </div>

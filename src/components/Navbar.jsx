@@ -47,9 +47,9 @@ export default function Navbar() {
             : "pt-4 pb-6 md:pt-6 md:pb-8 bg-primary shadow-md"
             }`}>
             {/* Logo */}
-            <Link to="/" className="font-headline font-bold leading-[0.9] tracking-tighter pointer-events-auto text-white no-underline flex flex-col group z-[70]">
-                <span className="text-2xl md:text-3xl">NDRK</span>
-                <span className="text-[8px] md:text-[10px] uppercase tracking-[0.15em] font-black opacity-90">First Grade College</span>
+            <Link to="/" className="font-headline font-bold leading-[0.9] tracking-tighter pointer-events-auto text-white no-underline flex flex-col group z-[70] shrink-0">
+                <span className="text-xl md:text-3xl">NDRK</span>
+                <span className="text-[7px] md:text-[10px] uppercase tracking-[0.15em] font-black opacity-90">First Grade College</span>
             </Link>
 
             {/* Desktop Navigation */}
@@ -66,18 +66,18 @@ export default function Navbar() {
             </div>
 
             {/* Right side Actions */}
-            <div className="flex items-center gap-4">
-                <Link to="/admissions" className="hidden sm:block bg-secondary text-white px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest pointer-events-auto hover:bg-white hover:text-primary transition-all no-underline">
+            <div className="flex items-center gap-2 md:gap-4">
+                <Link to="/admissions" className="hidden sm:inline-block bg-secondary text-white px-4 md:px-6 py-2 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-widest pointer-events-auto hover:bg-white hover:text-primary transition-all no-underline shrink-0">
                     Admissions
                 </Link>
 
                 {/* Mobile Toggle */}
                 <button
                     onClick={() => setMenuOpen(!menuOpen)}
-                    className="p-2 text-white md:hidden z-[70] transition-transform active:scale-95"
+                    className="p-2 text-white md:hidden z-[70] transition-transform active:scale-95 flex items-center justify-center bg-white/10 rounded-lg backdrop-blur-sm"
                     aria-label="Toggle Menu"
                 >
-                    {menuOpen ? <X size={28} /> : <Menu size={28} />}
+                    {menuOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
             </div>
 
