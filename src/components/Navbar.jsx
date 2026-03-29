@@ -43,30 +43,32 @@ export default function Navbar() {
 
     return (
         <nav className={`fixed top-0 left-0 right-0 z-[60] px-6 md:px-12 flex justify-between items-center transition-all duration-300 ease-in-out ${scrolled
-            ? "py-3 md:py-4 bg-primary/95 backdrop-blur-md shadow-lg"
-            : "pt-4 pb-6 md:pt-6 md:pb-8 bg-primary shadow-md"
+            ? "py-3 md:py-4 bg-[#00113a]/95 backdrop-blur-md shadow-lg"
+            : "pt-4 pb-6 md:pt-6 md:pb-8 bg-[#00113a] shadow-md"
             }`}>
             {/* Logo */}
-            <Link to="/" className="font-headline font-bold leading-[0.9] tracking-tighter pointer-events-auto text-white no-underline flex flex-col group z-[70] shrink-0">
+            < Link to="/" className="font-headline font-bold leading-[0.9] tracking-tighter pointer-events-auto text-white no-underline flex flex-col group z-[70] shrink-0" >
                 <span className="text-xl md:text-3xl">NDRK</span>
                 <span className="text-[7px] md:text-[10px] uppercase tracking-[0.15em] font-black opacity-90">First Grade College</span>
-            </Link>
+            </Link >
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex gap-10 lg:gap-12 font-medium text-sm uppercase tracking-widest pointer-events-auto">
-                {navLinks.map((link) => (
-                    <Link
-                        key={link.path}
-                        to={link.path}
-                        className={`hover:text-secondary transition-colors ${location.pathname === link.path ? 'text-secondary' : 'text-white'}`}
-                    >
-                        {link.name}
-                    </Link>
-                ))}
-            </div>
+            < div className="hidden md:flex gap-10 lg:gap-12 font-medium text-sm uppercase tracking-widest pointer-events-auto" >
+                {
+                    navLinks.map((link) => (
+                        <Link
+                            key={link.path}
+                            to={link.path}
+                            className={`hover:text-secondary transition-colors ${location.pathname === link.path ? 'text-secondary' : 'text-white'}`}
+                        >
+                            {link.name}
+                        </Link>
+                    ))
+                }
+            </div >
 
             {/* Right side Actions */}
-            <div className="flex items-center gap-2 md:gap-4">
+            < div className="flex items-center gap-2 md:gap-4" >
                 <Link to="/admissions" className="hidden sm:inline-block bg-secondary text-white px-4 md:px-6 py-2 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-widest pointer-events-auto hover:bg-white hover:text-primary transition-all no-underline shrink-0">
                     Admissions
                 </Link>
@@ -79,10 +81,10 @@ export default function Navbar() {
                 >
                     {menuOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
-            </div>
+            </div >
 
             {/* Mobile Menu Overlay */}
-            <div className={`fixed inset-0 bg-primary z-[65] flex flex-col items-center justify-center transition-all duration-500 ease-in-out md:hidden ${menuOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-full'
+            < div className={`fixed inset-0 bg-[#00113a] z-[65] flex flex-col items-center justify-center transition-all duration-500 ease-in-out md:hidden ${menuOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-full'
                 }`}>
                 <div className="flex flex-col items-center gap-8 text-center">
                     {navLinks.map((link) => (
@@ -104,7 +106,7 @@ export default function Navbar() {
                     </Link>
                 </div>
 
-            </div>
-        </nav>
+            </div >
+        </nav >
     );
 }

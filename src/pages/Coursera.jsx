@@ -13,10 +13,10 @@ export default function Coursera() {
                 <div className="relative z-10 max-w-7xl mx-auto px-8 w-full">
                     <div className="max-w-3xl">
                         <span className="inline-block px-4 py-1 bg-tertiary-fixed text-on-tertiary-fixed text-[10px] font-bold tracking-[0.2em] rounded-sm mb-6 uppercase shadow-sm">Future-Ready Education</span>
-                        <h1 className="font-headline text-4xl md:text-6xl font-bold mb-8 leading-tight text-white">
+                        <h1 className="font-headline text-3xl md:text-6xl font-bold mb-8 leading-tight text-white">
                             Coursera Career Academy @ NDRK
                         </h1>
-                        <p className="text-xl text-primary-fixed-dim font-light max-w-xl mb-10 leading-relaxed">
+                        <p className="text-lg md:text-xl text-primary-fixed-dim font-light max-w-xl mb-10 leading-relaxed">
                             Coursera Career Academy is a new program that NDRK First Grade College is offering to help students develop the skills they need for in-demand careers.
                         </p>
                         <div className="flex flex-wrap gap-4">
@@ -74,13 +74,13 @@ export default function Coursera() {
             {/* Strategic Benefits */}
             <section className="py-32 overflow-hidden bg-surface">
                 <div className="max-w-7xl mx-auto px-8 grid grid-cols-12 gap-12">
-                    <div className="col-span-12 lg:col-span-5 relative mb-12 lg:mb-0">
+                    <div className="col-span-12 lg:col-span-5 relative mb-16 lg:mb-0">
                         <h3 className="text-3xl md:text-5xl lg:text-6xl font-headline font-bold text-primary tracking-tighter mb-8 bg-surface">Benefits of Coursera Career Academy</h3>
-                        <div className="w-full aspect-[4/5] rounded-xl overflow-hidden shadow-[0px_20px_40px_rgba(25,28,29,0.06)]">
+                        <div className="w-full aspect-[4/3] md:aspect-[4/5] rounded-xl overflow-hidden shadow-[0px_20px_40px_rgba(25,28,29,0.06)]">
                             <img className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZofgpJ5osCl7JfAKQ7lkKkVAyaglS_izabvAp8Q-V1NFVHDv3Q_JU08gTOaZHQ2njUZUlV0LpmWNDbv4ZnQGBhYzX61lLJzXRUXuH4sFigV1ojK5yY4w8aDR8obz2cc4KY3mW-ifyxdKq57r0hurMTNzA2kqhUbDroDLsU2J0Jl4LqQvTGruXrkQ3ifDRJXeADFgKdn2h0BQUT1yqWh_sKvcUAFbW7e8ry-rsYDxD-yD35rLoJ_u6hhtWxodKwWTv_OAWsF04m09n" alt="Professional student" />
                         </div>
-                        <div className="absolute -bottom-8 -right-8 bg-tertiary-container p-8 rounded-xl max-w-xs text-on-tertiary-container shadow-xl">
-                            <p className="font-headline italic text-xl">"Industry-led training that transforms theoretical knowledge into professional capability."</p>
+                        <div className="absolute -bottom-6 right-0 md:-bottom-8 md:-right-8 bg-tertiary-container p-6 md:p-8 rounded-xl max-w-[280px] md:max-w-xs text-on-tertiary-container shadow-xl">
+                            <p className="font-headline italic text-lg md:text-xl">"Industry-led training that transforms theoretical knowledge into professional capability."</p>
                         </div>
                     </div>
                     <div className="col-span-12 lg:col-span-7 flex flex-col justify-center space-y-8 md:space-y-12 lg:pl-16">
