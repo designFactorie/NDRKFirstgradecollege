@@ -1,9 +1,10 @@
+import ActionButton from './ActionButton';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Footer() {
     return (
-        <footer className="bg-black/40 backdrop-blur-md py-12 px-8 relative z-50">
+        <footer className="bg-primary py-12 px-8 relative z-50">
             <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 items-center text-sm text-slate-400">
                 <div className="text-center md:text-left">
                     <div className="font-headline font-bold text-white text-xl mb-2">NDRK First Grade College</div>
@@ -12,7 +13,7 @@ export default function Footer() {
                 <div className="flex justify-center gap-8">
                     <Link className="hover:text-white transition-colors" to="/faqs">FAQs</Link>
                     <Link className="hover:text-white transition-colors" to="/mandatory-disclosure">Disclosure</Link>
-                    <a className="hover:text-white transition-colors" href="#">LinkedIn</a>
+                    <ActionButton resource="linkedin" className="hover:text-white transition-colors">LinkedIn</ActionButton>
                 </div>
                 <div className="text-center md:text-right">
                     <p>© 2026 NDRK First Grade College.</p>

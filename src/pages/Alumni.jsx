@@ -1,12 +1,14 @@
+import SectionLink from '../components/SectionLink';
+import ActionButton from '../components/ActionButton';
 import React from 'react';
 import Footer from '../components/Footer';
 
 export default function Alumni() {
     return (
-        <main className="pt-28">
+        <main id="main-content" tabIndex={-1} className="page-shell ">
             {/* Hero Section: Text-Focused Editorial Layout */}
-            <section className="relative py-24 md:py-40 flex flex-col items-center bg-surface overflow-visible">
-                <div className="max-w-4xl mx-auto px-8 w-full text-center z-10">
+            <section className="page-hero hero-editorial">
+                <div className="hero-container hero-alumni-content mx-auto text-center relative z-10">
                     <span className="inline-block px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed text-[10px] font-bold tracking-[0.2em] uppercase rounded-sm mb-6">Network of Excellence</span>
                     <h1 className="font-headline text-3xl md:text-7xl font-bold mb-8 leading-tight text-primary">
                         A Global <span className="italic text-secondary font-serif">Network</span> of Excellence.
@@ -14,12 +16,12 @@ export default function Alumni() {
                     <p className="text-slate-600 text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed font-medium">
                         NDRK Group of Institutions offers programs & resources to alumni at every phase of your career. From graduates to industry leaders, explore our legacy.
                     </p>
-                    <div className="flex flex-wrap gap-6 justify-center items-center mb-16">
-                        <button className="bg-primary text-white px-10 py-4 rounded-full font-bold text-sm tracking-widest uppercase hover:bg-secondary transition-colors shadow-[0px_20px_40px_rgba(25,28,29,0.1)] cursor-not-allowed opacity-90" disabled>Join The Alumni Portal</button>
-                        <button className="text-secondary font-bold flex items-center gap-2 group">Explore Stories <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span></button>
+                    <div className="hero-actions flex flex-wrap justify-center items-center">
+                        <ActionButton resource="alumni" className="bg-primary text-white px-10 py-4 rounded-full font-bold text-sm tracking-widest uppercase hover:bg-secondary transition-colors shadow-[0px_20px_40px_rgba(25,28,29,0.1)] ">Join The Alumni Portal</ActionButton>
+                        <SectionLink to="/alumni" section="stories" className="text-secondary font-bold flex items-center gap-2 group">Explore Stories <span aria-hidden="true" className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span></SectionLink>
                     </div>
 
-                    <div className="bg-white/50 backdrop-blur-sm p-8 rounded-2xl border border-outline-variant/10 max-w-lg mx-auto shadow-[0px_20px_40px_rgba(0,0,0,0.03)]">
+                    <div className="hero-alumni-stat bg-white/50 backdrop-blur-sm p-8 rounded-2xl border border-outline-variant/10 max-w-lg mx-auto shadow-[0px_20px_40px_rgba(0,0,0,0.03)]">
                         <p className="font-serif text-4xl text-primary italic mb-2">15,000+</p>
                         <p className="text-xs text-slate-500 uppercase tracking-widest font-bold leading-relaxed px-4">
                             Active Alumni Members Contributing to 45+ Global Economies
@@ -28,11 +30,11 @@ export default function Alumni() {
                 </div>
 
                 {/* Decorative Background Element */}
-                <div className="absolute top-0 left-0 w-full h-full bg-surface-container-low/30 -z-0"></div>
+                <div className="pointer-events-none absolute top-0 left-0 w-full h-full bg-surface-container-low/30 -z-0"></div>
             </section>
 
             {/* Stories Section  */}
-            <section className="py-24 bg-surface-container-low">
+            <section id="stories" className="py-24 bg-surface-container-low">
                 <div className="max-w-7xl mx-auto px-8">
                     <div className="flex flex-col mb-16 max-w-2xl">
                         <span className="text-secondary font-bold text-[10px] tracking-widest uppercase mb-4 block">Testimonials</span>
@@ -53,7 +55,7 @@ export default function Alumni() {
 
                         {/* Feature 2: Rupesh */}
                         <div className="group relative overflow-hidden rounded-xl bg-primary aspect-[4/3] shadow-[0px_20px_40px_rgba(25,28,29,0.06)]">
-                            <img alt="Rupesh Mittal" className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtTQvM7gwm7DSS5j0jf8g6Lds6a9sqZfxMlEfQvOHZRGhfdB4cTTz9pb-zy8b08BX_l6aWSjWxBqc0E_h9o5J-1tHSg8aTdJC5Lc5DQnJxJkOYSodTom823fqeu-GNxiyNlca-i4bXUmQJ0Il7hAscHJxET3W9fHUJHdu1WLlGgJhm3ARPyjoGFjb5V6BpCfzvz01MTZGYuuCQNZn89n68I4q_uFmwcQ1g-pv2HwKQZz0Q_5pwXSxUzQXVARGcANyJtAtntxRcFs0J" />
+                            <img loading="lazy" decoding="async" alt="Rupesh Mittal" className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtTQvM7gwm7DSS5j0jf8g6Lds6a9sqZfxMlEfQvOHZRGhfdB4cTTz9pb-zy8b08BX_l6aWSjWxBqc0E_h9o5J-1tHSg8aTdJC5Lc5DQnJxJkOYSodTom823fqeu-GNxiyNlca-i4bXUmQJ0Il7hAscHJxET3W9fHUJHdu1WLlGgJhm3ARPyjoGFjb5V6BpCfzvz01MTZGYuuCQNZn89n68I4q_uFmwcQ1g-pv2HwKQZz0Q_5pwXSxUzQXVARGcANyJtAtntxRcFs0J" />
                             <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/60 to-transparent p-6 md:p-10 flex flex-col justify-end">
                                 <span className="text-tertiary-fixed text-[10px] font-bold tracking-widest uppercase mb-2">Alumni in News</span>
                                 <h3 className="text-white font-serif text-2xl md:text-4xl mb-4">Rupesh Mittal</h3>
@@ -75,7 +77,7 @@ export default function Alumni() {
                         {/* ICBMSS Event */}
                         <div className="flex flex-col md:flex-row items-center gap-8 p-1 rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors group">
                             <div className="w-full md:w-64 aspect-video rounded-lg overflow-hidden shrink-0">
-                                <img alt="ICBMSS Meet" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsBjC_53bWKzkOwAoeOuIN5yvFv3gY3N1gwWOjzrbgft8AUNGS_9G_jAc0tegQk12sLzT1WREBOY0reYNh8ssc3N14XU0s_T8SoRXGSBTjRgAt6-SrS5wO_-AXgC-15godh9IwgCYrRCBNjL9f-nkF_Rw0ZyoOKy8jV_IRVCQc2M2HlUwPkNZJYrZagU9t9qKn-MD80Vd9Aov8BfozGLcO5m9jY9AViD_Xwao92JPda6xefYeJKNiGb8BrkkRER-Ib9pTsS__GC1RQ" />
+                                <img loading="lazy" decoding="async" alt="ICBMSS Meet" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsBjC_53bWKzkOwAoeOuIN5yvFv3gY3N1gwWOjzrbgft8AUNGS_9G_jAc0tegQk12sLzT1WREBOY0reYNh8ssc3N14XU0s_T8SoRXGSBTjRgAt6-SrS5wO_-AXgC-15godh9IwgCYrRCBNjL9f-nkF_Rw0ZyoOKy8jV_IRVCQc2M2HlUwPkNZJYrZagU9t9qKn-MD80Vd9Aov8BfozGLcO5m9jY9AViD_Xwao92JPda6xefYeJKNiGb8BrkkRER-Ib9pTsS__GC1RQ" />
                             </div>
                             <div className="flex-grow py-4 px-2">
                                 <div className="flex items-center gap-4 mb-2">
@@ -103,23 +105,23 @@ export default function Alumni() {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         <div className="bg-surface-container-lowest p-8 rounded-xl text-center shadow-[0px_20px_40px_rgba(25,28,29,0.06)] group hover:-translate-y-2 transition-transform duration-300">
-                            <span className="material-symbols-outlined text-4xl text-secondary mb-4 group-hover:scale-110 transition-transform">volunteer_activism</span>
-                            <h4 className="font-headline text-xl font-bold mb-2">Donate</h4>
+                            <span aria-hidden="true" className="material-symbols-outlined text-4xl text-secondary mb-4 group-hover:scale-110 transition-transform">volunteer_activism</span>
+                            <h4 className="font-headline text-xl font-bold mb-2 text-primary">Donate</h4>
                             <p className="text-slate-600 text-sm">Fund scholarships and campus improvements.</p>
                         </div>
                         <div className="bg-surface-container-lowest p-8 rounded-xl text-center shadow-[0px_20px_40px_rgba(25,28,29,0.06)] group hover:-translate-y-2 transition-transform duration-300">
-                            <span className="material-symbols-outlined text-4xl text-secondary mb-4 group-hover:scale-110 transition-transform">school</span>
-                            <h4 className="font-headline text-xl font-bold mb-2">Teach</h4>
+                            <span aria-hidden="true" className="material-symbols-outlined text-4xl text-secondary mb-4 group-hover:scale-110 transition-transform">school</span>
+                            <h4 className="font-headline text-xl font-bold mb-2 text-primary">Teach</h4>
                             <p className="text-slate-600 text-sm">Return as guest faculty and share your expertise.</p>
                         </div>
                         <div className="bg-surface-container-lowest p-8 rounded-xl text-center shadow-[0px_20px_40px_rgba(25,28,29,0.06)] group hover:-translate-y-2 transition-transform duration-300">
-                            <span className="material-symbols-outlined text-4xl text-secondary mb-4 group-hover:scale-110 transition-transform">work</span>
-                            <h4 className="font-headline text-xl font-bold mb-2">Placements</h4>
+                            <span aria-hidden="true" className="material-symbols-outlined text-4xl text-secondary mb-4 group-hover:scale-110 transition-transform">work</span>
+                            <h4 className="font-headline text-xl font-bold mb-2 text-primary">Placements</h4>
                             <p className="text-slate-600 text-sm">Help recruit new talent for your organization.</p>
                         </div>
                         <div className="bg-surface-container-lowest p-8 rounded-xl text-center shadow-[0px_20px_40px_rgba(25,28,29,0.06)] group hover:-translate-y-2 transition-transform duration-300">
-                            <span className="material-symbols-outlined text-4xl text-secondary mb-4 group-hover:scale-110 transition-transform">psychology</span>
-                            <h4 className="font-headline text-xl font-bold mb-2">Mentorship</h4>
+                            <span aria-hidden="true" className="material-symbols-outlined text-4xl text-secondary mb-4 group-hover:scale-110 transition-transform">psychology</span>
+                            <h4 className="font-headline text-xl font-bold mb-2 text-primary">Mentorship</h4>
                             <p className="text-slate-600 text-sm">Guide current students on their career paths.</p>
                         </div>
                     </div>
@@ -132,8 +134,8 @@ export default function Alumni() {
                     <h3 className="font-serif text-4xl text-primary mb-6">Stay Connected to Your Roots</h3>
                     <p className="text-slate-600 mb-10 text-lg">Update your profile to receive exclusive invitations, career opportunities, and the quarterly Alumni Journal.</p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <input className="bg-surface-container px-6 py-4 rounded-full border border-outline-variant focus:ring-2 focus:ring-secondary w-full sm:w-72" placeholder="Email Address" type="email" />
-                        <button className="bg-primary text-white px-10 py-4 rounded-full font-bold uppercase tracking-widest text-xs hover:bg-secondary transition-colors shrink-0">Join Network</button>
+                        <input aria-label="Alumni email address" className="bg-surface-container px-6 py-4 rounded-full border border-outline-variant focus:ring-2 focus:ring-secondary w-full sm:w-72" placeholder="Email Address" type="email" />
+                        <ActionButton resource="network" className="bg-primary text-white px-10 py-4 rounded-full font-bold uppercase tracking-widest text-xs hover:bg-secondary transition-colors shrink-0">Join Network</ActionButton>
                     </div>
                 </div>
             </section>

@@ -1,113 +1,79 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu } from 'lucide-react';
+import Modal from './Modal';
+import { useSiteActions } from './siteActions';
+
+const navLinks = [
+    { name: 'Story', path: '/about-us' },
+    { name: 'Academics', path: '/academics' },
+    { name: 'Courses', path: '/courses' },
+    { name: 'Life', path: '/life' },
+    { name: 'Alumni', path: '/alumni' },
+    { name: 'Coursera', path: '/career-academy' },
+    { name: 'FAQs', path: '/faqs' },
+    { name: 'Disclosure', path: '/mandatory-disclosure' },
+];
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
     const location = useLocation();
-
-    // Close menu when location changes
-    useEffect(() => {
-        setMenuOpen(false);
-    }, [location]);
+    const currentPath = location.pathname.replace(/\/+$/, '') || '/';
+    const { openEnquiry } = useSiteActions();
 
     useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 20);
-        };
-        window.addEventListener('scroll', handleScroll);
-        // Initial check
+        const handleScroll = () => setScrolled(window.scrollY > 20);
+        window.addEventListener('scroll', handleScroll, { passive: true });
         handleScroll();
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    // Prevent scrolling when menu is open
     useEffect(() => {
-        if (menuOpen) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'unset';
-        }
-    }, [menuOpen]);
-
-    const navLinks = [
-        { name: 'Story', path: '/about-us' },
-        { name: 'Academics', path: '/academics' },
-        { name: 'Courses', path: '/courses' },
-        { name: 'Life', path: '/life' },
-        { name: 'Alumni', path: '/alumni' },
-        { name: 'Coursera', path: '/career-academy' },
-        { name: 'FAQs', path: '/faqs' },
-        { name: 'Disclosure', path: '/mandatory-disclosure' },
-    ];
+        const desktop = window.matchMedia('(min-width: 1280px)');
+        const close = () => setMenuOpen(false);
+        const resize = () => { if (desktop.matches) close(); };
+        desktop.addEventListener('change', resize);
+        window.addEventListener('popstate', close);
+        return () => {
+            desktop.removeEventListener('change', resize);
+            window.removeEventListener('popstate', close);
+        };
+    }, []);
 
     return (
-        <nav className={`fixed top-0 left-0 right-0 z-[60] px-6 md:px-12 flex justify-between items-center transition-all duration-300 ease-in-out ${scrolled
-            ? "py-3 md:py-4 bg-[#00113a]/95 backdrop-blur-md shadow-lg"
-            : "pt-4 pb-6 md:pt-6 md:pb-8 bg-[#00113a] shadow-md"
-            }`}>
-            {/* Logo */}
-            < Link to="/" className="font-headline font-bold leading-[0.9] tracking-tighter pointer-events-auto text-white no-underline flex flex-col group z-[70] shrink-0" >
-                <span className="text-xl md:text-3xl">NDRK</span>
-                <span className="text-[7px] md:text-[10px] uppercase tracking-[0.15em] font-black opacity-90">First Grade College</span>
-            </Link >
-
-            {/* Desktop Navigation */}
-            < div className="hidden md:flex gap-10 lg:gap-12 font-medium text-sm uppercase tracking-widest pointer-events-auto" >
-                {
-                    navLinks.map((link) => (
-                        <Link
-                            key={link.path}
-                            to={link.path}
-                            className={`hover:text-secondary transition-colors ${location.pathname === link.path ? 'text-secondary' : 'text-white'}`}
-                        >
-                            {link.name}
-                        </Link>
-                    ))
-                }
-            </div >
-
-            {/* Right side Actions */}
-            < div className="flex items-center gap-2 md:gap-4" >
-                <Link to="/admissions" className="hidden sm:inline-block bg-secondary text-white px-4 md:px-6 py-2 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-widest pointer-events-auto hover:bg-white hover:text-primary transition-all no-underline shrink-0">
-                    Admissions
+        <>
+            <a href="#main-content" className="skip-link" onClick={(event) => {
+                event.preventDefault();
+                const main = document.querySelector('main');
+                main?.focus();
+                main?.scrollIntoView();
+            }}>Skip to content</a>
+            <nav aria-label="Main navigation" className={`site-navbar ${scrolled ? 'site-navbar--compact' : ''} fixed top-0 left-0 right-0 z-[60] px-6 md:px-10 flex justify-between gap-6 items-center transition-all duration-300 ${scrolled ? 'py-3 md:py-4 bg-[#00113a]/95 backdrop-blur-md shadow-lg' : 'pt-4 pb-6 md:pt-6 md:pb-8 bg-[#00113a] shadow-md'}`}>
+                <Link to="/" aria-label="NDRK First Grade College home" className="font-headline font-bold leading-[0.9] tracking-tighter text-white flex flex-col shrink-0">
+                    <span className="text-xl md:text-3xl">NDRK</span>
+                    <span className="text-[7px] md:text-[10px] uppercase tracking-[0.15em] font-black opacity-90">First Grade College</span>
                 </Link>
-
-                {/* Mobile Toggle */}
-                <button
-                    onClick={() => setMenuOpen(!menuOpen)}
-                    className="p-2 text-white md:hidden z-[70] transition-transform active:scale-95 flex items-center justify-center bg-white/10 rounded-lg backdrop-blur-sm"
-                    aria-label="Toggle Menu"
-                >
-                    {menuOpen ? <X size={24} /> : <Menu size={24} />}
-                </button>
-            </div >
-
-            {/* Mobile Menu Overlay */}
-            < div className={`fixed inset-0 bg-[#00113a] z-[65] flex flex-col items-center justify-center transition-all duration-500 ease-in-out md:hidden ${menuOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-full'
-                }`}>
-                <div className="flex flex-col items-center gap-8 text-center">
-                    {navLinks.map((link) => (
-                        <Link
-                            key={link.path}
-                            to={link.path}
-                            onClick={() => setMenuOpen(false)}
-                            className={`text-2xl font-serif tracking-tight border-b border-transparent hover:border-secondary transition-all ${location.pathname === link.path ? 'text-secondary font-bold scale-110' : 'text-white'}`}
-                        >
-                            {link.name}
-                        </Link>
-                    ))}
-                    <Link
-                        to="/admissions"
-                        onClick={() => setMenuOpen(false)}
-                        className="mt-4 bg-secondary text-white px-10 py-4 rounded-full text-sm font-bold uppercase tracking-widest"
-                    >
-                        Apply Now
-                    </Link>
+                <div className="hidden xl:flex gap-5 2xl:gap-8 font-medium text-xs uppercase tracking-widest">
+                    {navLinks.map((link) => <Link key={link.path} to={link.path}
+                        aria-current={currentPath === link.path ? 'page' : undefined}
+                        className={`py-3 hover:text-secondary-fixed-dim transition-colors ${currentPath === link.path ? 'text-secondary-fixed-dim' : 'text-white'}`}>{link.name}</Link>)}
                 </div>
-
-            </div >
-        </nav >
+                <div className="flex items-center gap-3">
+                    <Link to="/admissions" aria-current={currentPath === '/admissions' ? 'page' : undefined} className="hidden sm:inline-block bg-secondary text-white px-5 py-3 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-primary transition-all shrink-0">Admissions</Link>
+                    <button type="button" onClick={() => setMenuOpen(true)} className="p-3 text-white xl:hidden bg-white/10 rounded-lg" aria-label="Open menu" aria-expanded={menuOpen} aria-haspopup="dialog" aria-controls="mobile-navigation"><Menu size={24} /></button>
+                </div>
+            </nav>
+            <Modal open={menuOpen} onClose={() => setMenuOpen(false)} titleId="menu-title" className="navigation-dialog">
+                <h2 id="menu-title" className="font-headline text-xl font-bold mb-6 pr-12">Explore NDRK</h2>
+                <nav id="mobile-navigation" aria-label="Mobile navigation" className="flex flex-col gap-1">
+                    {navLinks.map((link) => <Link key={link.path} to={link.path} onClick={() => setMenuOpen(false)}
+                        aria-current={currentPath === link.path ? 'page' : undefined}
+                        className={`rounded-lg px-4 py-3 text-lg hover:bg-slate-100 ${currentPath === link.path ? 'bg-slate-100 text-secondary font-bold' : 'text-primary'}`}>{link.name}</Link>)}
+                    <Link to="/admissions" onClick={() => setMenuOpen(false)} className="rounded-lg px-4 py-3 text-lg text-primary hover:bg-slate-100">Admissions</Link>
+                    <button type="button" className="enquiry-submit mt-4" onClick={() => { setMenuOpen(false); openEnquiry(); }}>Apply Now</button>
+                </nav>
+            </Modal>
+        </>
     );
 }

@@ -1,7 +1,8 @@
 import React from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+import SiteActionsProvider from './components/SiteActionsProvider';
+import NotFound from './pages/NotFound';
 
 // Page Components
 import Home from './pages/Home';
@@ -19,6 +20,7 @@ import ScrollToTop from './components/ScrollToTop';
 function App() {
   return (
     <Router>
+      <SiteActionsProvider>
       <ScrollToTop />
       <Navbar />
       <Routes>
@@ -32,7 +34,9 @@ function App() {
         <Route path="/career-academy" element={<Coursera />} />
         <Route path="/faqs" element={<FAQs />} />
         <Route path="/mandatory-disclosure" element={<MandatoryDisclosure />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
+      </SiteActionsProvider>
     </Router>
   );
 }
