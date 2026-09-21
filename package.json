@@ -1,14 +1,17 @@
 {
   "name": "ndrk-first-grade-college",
-  "homepage": "https://designFactorie.github.io/NDRKFirstgradecollege/",
+  "homepage": "https://ndrkfgc.edu.in/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node scripts/create-route-pages.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
+    "start": "node --env-file-if-exists=.env.local server/index.mjs",
+    "test": "node --test tests/*.test.cjs",
+    "check:enquiry": "node --env-file-if-exists=.env.local scripts/check-enquiry-live.mjs",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },

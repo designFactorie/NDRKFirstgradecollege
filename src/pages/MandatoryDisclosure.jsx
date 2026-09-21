@@ -3,10 +3,10 @@ import Footer from '../components/Footer';
 
 export default function MandatoryDisclosure() {
     return (
-        <main className="min-h-screen pt-28">
+        <main id="main-content" tabIndex={-1} className="page-shell min-h-screen">
             {/* Hero Header */}
-            <header className="relative pt-24 pb-32 overflow-hidden bg-primary">
-                <div className="max-w-7xl mx-auto px-8 relative z-10">
+            <header className="page-hero hero-banner">
+                <div className="hero-container max-w-7xl mx-auto px-8 relative z-10">
                     <div className="flex flex-col md:flex-row md:items-end justify-between gap-12">
                         <div className="max-w-2xl">
                             <span className="inline-block px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed font-bold text-[10px] tracking-[0.2em] uppercase rounded-sm mb-6">Transparency & Compliance</span>
@@ -35,15 +35,15 @@ export default function MandatoryDisclosure() {
                             <div className="space-y-4">
                                 <a href="https://drive.google.com/drive/folders/1pogcIK8LcylvDYl4T9wUAkFkXZYp4_we?usp=sharing" target="_blank" rel="noopener noreferrer" className="p-6 bg-surface-container-lowest rounded-xl flex items-center justify-between group cursor-pointer hover:bg-primary transition-all duration-300 shadow-sm border border-outline-variant/20 block no-underline decoration-transparent">
                                     <span className="font-bold text-lg font-headline group-hover:text-white transition-colors text-primary">Desirable Documents</span>
-                                    <span className="material-symbols-outlined text-tertiary group-hover:text-white transition-colors">open_in_new</span>
+                                    <span aria-hidden="true" className="material-symbols-outlined text-tertiary group-hover:text-white transition-colors">open_in_new</span>
                                 </a>
                                 <a href="https://drive.google.com/drive/folders/1nVlk7ofg4s5vLH-Jr40z42Cv_ZcwuTJp?usp=sharing" target="_blank" rel="noopener noreferrer" className="p-6 bg-surface-container-lowest rounded-xl flex items-center justify-between group cursor-pointer hover:bg-primary transition-all duration-300 shadow-sm border border-outline-variant/20 block no-underline decoration-transparent">
                                     <span className="font-bold text-lg font-headline group-hover:text-white transition-colors text-primary">Essential Documents</span>
-                                    <span className="material-symbols-outlined text-tertiary group-hover:text-white transition-colors">open_in_new</span>
+                                    <span aria-hidden="true" className="material-symbols-outlined text-tertiary group-hover:text-white transition-colors">open_in_new</span>
                                 </a>
                                 <a href="https://drive.google.com/drive/folders/1UcrIDSnsWPn2a7Vcnhs1xyyPMS8LlsOB?usp=sharing" target="_blank" rel="noopener noreferrer" className="p-6 bg-surface-container-lowest rounded-xl flex items-center justify-between group cursor-pointer hover:bg-primary transition-all duration-300 shadow-sm border border-outline-variant/20 block no-underline decoration-transparent">
                                     <span className="font-bold text-lg font-headline group-hover:text-white transition-colors text-primary">Programme Documents</span>
-                                    <span className="material-symbols-outlined text-tertiary group-hover:text-white transition-colors">open_in_new</span>
+                                    <span aria-hidden="true" className="material-symbols-outlined text-tertiary group-hover:text-white transition-colors">open_in_new</span>
                                 </a>
                             </div>
                         </div>
