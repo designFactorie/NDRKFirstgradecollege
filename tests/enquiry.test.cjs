@@ -6,16 +6,16 @@ const crypto = require('node:crypto');
 const { createServer } = require('node:http');
 
 const modules = Promise.all([import('../src/lib/enquiry.mjs'), import('../server/enquiry.mjs')]);
-const fields = { name: '=Student', phone: '9980481450', email: 'student@example.com', program: 'BCA', message: '=Please arrange a visit', purpose: 'visit' };
-const fingerprint = data => JSON.stringify(['name', 'phone', 'email', 'program', 'message', 'purpose'].map(key => data[key]));
+const fields = { name: '=Student', phone: '9980481450', email: 'student@example.com', program: 'BCA', dateOfBirth: '2006-02-28', previousInstitution: '=Previous College', score: '85%', admissionMode: 'Merit Based', message: '=Please arrange a visit', purpose: 'visit' };
+const fingerprint = data => JSON.stringify(['name', 'phone', 'email', 'dateOfBirth', 'previousInstitution', 'score', 'program', 'admissionMode', 'message', 'purpose'].map(key => data[key]));
 const hash = data => crypto.createHash('sha256').update(fingerprint(data)).digest('base64url');
 const submission = (changes = {}) => {
   const data = { ...fields, ...changes };
   return { ...data, receipt: `${crypto.randomUUID()}:${hash(data)}`, action: 'submit' };
 };
-const headers = ['Date & Time', 'Institution', 'Name', 'Email Address', 'Phone Number', 'Program', 'Message', 'Enquiry Type', 'Submission Receipt', 'Status', 'Notes'];
+const headers = ['Date & Time', 'Institution', 'Name', 'Email Address', 'Phone Number', 'Date of Birth', 'Previous Institution', 'Percentage / CGPA', 'Program', 'Mode of Admission', 'Message', 'Enquiry Type', 'Submission Receipt', 'Status', 'Notes'];
 const env = { ENQUIRY_SCRIPT_URL: 'https://script.google.com/macros/s/test/exec', ENQUIRY_SCRIPT_SECRET: 'test-secret' };
-const saved = { ok: true, code: 'SAVED', protocol: 1, institution: 'NDRK FGC' };
+const saved = { ok: true, code: 'SAVED', protocol: 2, institution: 'NDRK FGC' };
 const request = data => new Request('https://college.example/api/enquiry', {
   method: 'POST', headers: { 'Content-Type': 'application/json', Origin: 'https://college.example' }, body: JSON.stringify(data),
 });
@@ -26,7 +26,7 @@ function scriptHarness(options = {}) {
   let changedUnderLock = false;
   const plain = value => typeof value === 'string' && value.startsWith("'") ? value.slice(1) : value;
   const sheet = {
-    getMaxColumns: () => 11, getLastRow: () => rows.length, getMaxRows: () => capacity,
+    getMaxColumns: () => 15, getLastRow: () => rows.length, getMaxRows: () => capacity,
     insertRowsAfter: (after, count) => { assert.ok(held); assert.equal(after, capacity); capacity += count; },
     getRange(row, column, height = 1, width = 1) {
       const range = {
@@ -74,18 +74,18 @@ test('normalizes +91 and rejects malformed fields, programs and enquiry types', 
   assert.equal(shared.enquiryFingerprint(fields), fingerprint(fields));
 });
 
-test('writes exact A-K layout, literal text, automatic type and blank staff columns', () => {
+test('writes exact A-O layout, literal text, automatic type and blank staff columns', () => {
   const script = scriptHarness(), data = submission();
   assert.deepEqual(script.send(data), saved);
   assert.equal(script.rows.length, 2);
-  assert.equal(script.rows[1].length, 11);
+  assert.equal(script.rows[1].length, 15);
   assert.ok(script.rows[1][0] instanceof Date);
-  assert.deepEqual(Array.from(script.rows[1].slice(1)), ["'NDRK First Grade College", "'=Student", "'student@example.com", "'9980481450", "'BCA", "'=Please arrange a visit", "'Campus Visit", data.receipt, '', '']);
+  assert.deepEqual(Array.from(script.rows[1].slice(1)), ["'NDRK First Grade College", "'=Student", "'student@example.com", "'9980481450", "'2006-02-28", "'=Previous College", "'85%", "'BCA", "'Merit Based", "'=Please arrange a visit", "'Campus Visit", data.receipt, '', '']);
   assert.equal(script.isLocked(), false);
   for (const program of ['B.Com', 'M.Com', 'BCA', 'BBA']) {
     const admission = scriptHarness();
     assert.equal(admission.send(submission({ purpose: 'apply', program })).code, 'SAVED');
-    assert.equal(admission.rows[1][7], "'Admission");
+    assert.equal(admission.rows[1][11], "'Admission");
   }
 });
 
@@ -122,7 +122,7 @@ test('rejects wrong secret, institution, headers, missing tab and tampered recei
   const script = scriptHarness();
   assert.equal(script.send({ ...submission(), secret: 'wrong' }).code, 'AUTH');
   assert.equal(script.send({ ...submission(), institution: 'NDRK PU' }).code, 'INSTITUTION');
-  for (const change of [{ name: 'changed' }, { purpose: 'apply' }, { message: 'changed' }]) {
+  for (const change of [{ name: 'changed' }, { purpose: 'apply' }, { message: 'changed' }, { dateOfBirth: '2005-01-01' }, { previousInstitution: 'Other College' }, { score: '90%' }, { admissionMode: 'Management Quota' }]) {
     assert.equal(script.send({ ...submission(), ...change }).code, 'INVALID_RECEIPT');
   }
   assert.equal(scriptHarness({ missingSheet: true }).send(submission()).code, 'SHEET');
@@ -153,7 +153,7 @@ test('optional message accepts empty and maximum Unicode; rejects invalid input'
     assert.equal(shared.normalizeEnquiry({ ...fields, message }).message, message);
     const script = scriptHarness();
     assert.equal(script.send(submission({ message })).code, 'SAVED');
-    assert.equal(script.rows[1][6], message ? "'" + message : '');
+    assert.equal(script.rows[1][10], message ? "'" + message : '');
   }
   for (const message of ['a'.repeat(3001), 123, null]) assert.equal(shared.normalizeEnquiry({ ...fields, message }), null);
 });
@@ -284,4 +284,42 @@ test('Vite dev and preview serve API JSON instead of the HTML fallback', async (
       assert.equal(invalid.status, 400); assert.equal((await invalid.json()).code, 'VALIDATION');
     }
   } finally { await dev.close(); await new Promise(resolve => previewServer.httpServer.close(resolve)); }
+});
+
+
+test('new academic fields validate consistently in the browser and Apps Script', async () => {
+  const [shared, server] = await modules;
+  const invalid = [{ dateOfBirth: '' }, { dateOfBirth: '2005-02-29' }, { dateOfBirth: '2006-04-31' },
+    { dateOfBirth: '2999-01-01' }, { dateOfBirth: '1899-01-01' }, { dateOfBirth: null },
+    { previousInstitution: ' ' }, { previousInstitution: 'a'.repeat(201) },
+    { score: '' }, { score: '-1' }, { score: '101%' }, { score: '10.1 CGPA' }, { score: 'abc' },
+    { admissionMode: '' }, { admissionMode: 'Other' }];
+  const endpoint = server.createEnquiryEndpoint({ env, fetchImpl: async () => assert.fail('invalid data must not reach Google') });
+  for (const change of invalid) {
+    assert.equal(shared.normalizeEnquiry({ ...fields, ...change }), null, JSON.stringify(change));
+    const script = scriptHarness();
+    assert.equal(script.send(submission(change)).code, 'VALIDATION', JSON.stringify(change));
+    assert.equal(script.rows.length, 1);
+    assert.equal((await endpoint(request(submission(change)))).status, 400);
+  }
+  for (const score of ['0%', '100%', '8.5 CGPA', '10 CGPA', '85', '85.25%']) {
+    const data = { ...fields, score, dateOfBirth: '2004-02-29', admissionMode: 'Management Quota' };
+    assert.ok(shared.normalizeEnquiry(data));
+    assert.equal(scriptHarness().send(submission(data)).code, 'SAVED');
+  }
+});
+
+test('all new fields affect receipts and survive the complete submission pipeline', async () => {
+  const [shared, server] = await modules;
+  const receipt = await shared.getEnquiryReceipt(fields);
+  for (const change of [{ dateOfBirth: '2005-01-01' }, { previousInstitution: 'New College' }, { score: '9 CGPA' }, { admissionMode: 'Management Quota' }]) {
+    assert.notEqual(await shared.getEnquiryReceipt({ ...fields, ...change }), receipt);
+  }
+  const script = scriptHarness();
+  const endpoint = server.createEnquiryEndpoint({ env, fetchImpl: async (_, options) => Response.json(script.send(JSON.parse(options.body))) });
+  const response = await endpoint(request(submission()));
+  assert.equal((await response.json()).code, 'SAVED');
+  assert.deepEqual(Array.from(script.rows[1].slice(5, 10)), ["'2006-02-28", "'=Previous College", "'85%", "'BCA", "'Merit Based"]);
+  const old = server.createEnquiryEndpoint({ env, fetchImpl: async () => Response.json({ ...saved, protocol: 1 }) });
+  assert.equal((await old(request({ action: 'status', receipt }))).status, 502);
 });

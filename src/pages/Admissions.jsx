@@ -9,7 +9,7 @@ export default function Admissions() {
     function handleApplication(event) {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
-        openEnquiry({ name: data.get('name'), email: data.get('email'), phone: data.get('phone'), program: data.get('program') });
+        openEnquiry({ name: data.get('name'), email: data.get('email'), phone: data.get('phone'), program: data.get('program'), dateOfBirth: data.get('dateOfBirth'), previousInstitution: data.get('institution'), score: data.get('score'), admissionMode: data.get('mode') });
     }
     return (
         <main id="main-content" tabIndex={-1} className="page-shell bg-surface min-h-screen">
@@ -238,7 +238,7 @@ export default function Admissions() {
                     <p className="text-slate-600 max-w-2xl mx-auto">Unlock Your Potential, Enroll Today at NDRK First Grade College: Where Dreams Begin!</p>
                 </div>
                 <form className="space-y-12" onSubmit={handleApplication} noValidate>
-                    <p className="text-sm text-slate-600">Apply Now opens an enquiry popup with your name, email, phone number and program.</p>
+                    <p className="text-sm text-slate-600">Apply Now opens an enquiry popup with your personal details, academic history and course selection. Review your details and add a message before submitting.</p>
                     {/* Section 1: Personal */}
                     <div className="space-y-8">
                         <div className="flex items-center gap-4 mb-8">

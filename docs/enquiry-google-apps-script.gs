@@ -4,9 +4,21 @@ const SHEET_ID = '12j_Rs6qbmOdJ_YgvaNf9gChZbgCbBUzm-mG-0EtNHTM';
 const TAB = 'NDRK FGC';
 const INSTITUTION = 'NDRK FGC';
 const LABEL = 'NDRK First Grade College';
-const PROTOCOL = 1;
-const HEADERS = ['Date & Time', 'Institution', 'Name', 'Email Address', 'Phone Number', 'Program', 'Message', 'Enquiry Type', 'Submission Receipt', 'Status', 'Notes'];
+const PROTOCOL = 2;
+const HEADERS = ['Date & Time', 'Institution', 'Name', 'Email Address', 'Phone Number', 'Date of Birth', 'Previous Institution', 'Percentage / CGPA', 'Program', 'Mode of Admission', 'Message', 'Enquiry Type', 'Submission Receipt', 'Status', 'Notes'];
 const PROGRAMS = ['B.Com', 'M.Com', 'BCA', 'BBA'];
+
+function validDateOfBirth(value) {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
+    const date = new Date(value + 'T00:00:00Z');
+    return !Number.isNaN(date.getTime()) && date.toISOString().slice(0, 10) === value &&
+        value >= '1900-01-01' && value <= new Date().toISOString().slice(0, 10);
+}
+
+function validScore(value) {
+    const match = /^(\d{1,3}(?:\.\d{1,2})?)\s*(%|CGPA)?$/i.exec(value);
+    return Boolean(match) && Number(match[1]) <= (match[2]?.toUpperCase() === 'CGPA' ? 10 : 100);
+}
 
 function doPost(e) {
   const reply = (code) => ContentService.createTextOutput(JSON.stringify({
@@ -28,13 +40,15 @@ function doPost(e) {
       return HEADERS.every((heading, i) => headings[i] === heading);
     };
     if (!validateSheet()) return reply('HEADERS');
-    const found = receipt => sheet.getLastRow() > 1 && sheet.getRange(2, 9, sheet.getLastRow() - 1, 1).createTextFinder(receipt).matchEntireCell(true).useRegularExpression(false).findNext();
+    const found = receipt => sheet.getLastRow() > 1 && sheet.getRange(2, 13, sheet.getLastRow() - 1, 1).createTextFinder(receipt).matchEntireCell(true).useRegularExpression(false).findNext();
     if (typeof data.receipt !== 'string' || !/^[a-f0-9]{8}-(?:[a-f0-9]{4}-){3}[a-f0-9]{12}:[A-Za-z0-9_-]{43}$/.test(data.receipt)) return reply('INVALID_RECEIPT');
     if (data.action === 'status') return reply(found(data.receipt) ? 'SAVED' : 'NOT_FOUND');
     if (data.action !== 'submit') return reply('ACTION');
-    const fields = ['name', 'phone', 'email', 'program', 'message', 'purpose'];
+    const fields = ['name', 'phone', 'email', 'dateOfBirth', 'previousInstitution', 'score', 'program', 'admissionMode', 'message', 'purpose'];
     if (fields.some(key => typeof data[key] !== 'string') || !data.name.trim() || data.name.length > 120 ||
         !/^[0-9]{10}$/.test(data.phone) || data.email.length > 254 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email) ||
+        !validDateOfBirth(data.dateOfBirth) || !data.previousInstitution.trim() || data.previousInstitution.length > 200 ||
+        data.score.length > 30 || !validScore(data.score) || !['Merit Based', 'Management Quota'].includes(data.admissionMode) ||
         !PROGRAMS.includes(data.program) || data.message.length > 3000 || !['visit', 'apply'].includes(data.purpose)) return reply('VALIDATION');
     const digest = value => Utilities.base64EncodeWebSafe(Utilities.computeDigest(Utilities.DigestAlgorithm.SHA_256, value, Utilities.Charset.UTF_8)).replace(/=+$/, '');
     if (data.receipt.split(':')[1] !== digest(JSON.stringify(fields.map(key => data[key])))) return reply('INVALID_RECEIPT');
@@ -49,7 +63,7 @@ function doPost(e) {
       if (rows.some(row => String(row[4]) === data.phone && row[0] instanceof Date && now.getTime() - row[0].getTime() < 60000)) return reply('RATE_LIMIT');
     }
     const literal = value => value === '' ? '' : "'" + value;
-    const row = [LABEL, data.name, data.email, data.phone, data.program, data.message, data.purpose === 'visit' ? 'Campus Visit' : 'Admission'].map(literal);
+    const row = [LABEL, data.name, data.email, data.phone, data.dateOfBirth, data.previousInstitution, data.score, data.program, data.admissionMode, data.message, data.purpose === 'visit' ? 'Campus Visit' : 'Admission'].map(literal);
     if (sheet.getLastRow() === sheet.getMaxRows()) sheet.insertRowsAfter(sheet.getMaxRows(), 1);
     const rowIndex = sheet.getLastRow() + 1;
     sheet.getRange(rowIndex, 1).setNumberFormat('yyyy-mm-dd hh:mm:ss');

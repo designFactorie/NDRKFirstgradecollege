@@ -1,5 +1,5 @@
 import { createHash } from 'node:crypto';
-import { INSTITUTION, RECEIPT_PATTERN, normalizeEnquiry, enquiryFingerprint } from '../src/lib/enquiry.mjs';
+import { INSTITUTION, PROTOCOL, RECEIPT_PATTERN, normalizeEnquiry, enquiryFingerprint } from '../src/lib/enquiry.mjs';
 
 const MAX_BYTES = 24000;
 const reply = (code, status) => Response.json({ ok: code === 'SAVED', code }, {
@@ -46,7 +46,7 @@ export function createEnquiryEndpoint({ env = process.env, fetchImpl = globalThi
                     });
                     if (!response.ok) throw new Error('upstream');
                     const result = await response.json();
-                    if (result?.institution !== INSTITUTION || result.protocol !== 1 ||
+                    if (result?.institution !== INSTITUTION || result.protocol !== PROTOCOL ||
                         typeof result.ok !== 'boolean' || result.ok !== (result.code === 'SAVED')) throw new Error('acknowledgement');
                     return result;
                 })(),
