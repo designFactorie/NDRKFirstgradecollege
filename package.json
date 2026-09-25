@@ -11,6 +11,7 @@
     "preview": "vite preview",
     "start": "node --env-file-if-exists=.env.local server/index.mjs",
     "test": "node --test tests/*.test.cjs",
+    "check:seo": "node scripts/check-seo-build.mjs",
     "check:enquiry": "node --env-file-if-exists=.env.local scripts/check-enquiry-live.mjs",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"

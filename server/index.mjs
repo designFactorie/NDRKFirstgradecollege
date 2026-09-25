@@ -1,17 +1,25 @@
 import { createServer } from 'node:http';
 import { readFile, stat } from 'node:fs/promises';
 import { resolve, sep, extname } from 'node:path';
+import { pages } from '../src/seo.mjs';
 import { createNodeHandler } from './enquiry.mjs';
 
 const root = resolve('dist');
 const enquiry = createNodeHandler();
 const mime = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript', '.css': 'text/css',
-    '.svg': 'image/svg+xml', '.png': 'image/png', '.webp': 'image/webp', '.ico': 'image/x-icon' };
+    '.svg': 'image/svg+xml', '.png': 'image/png', '.webp': 'image/webp', '.ico': 'image/x-icon', '.xml': 'application/xml; charset=utf-8', '.txt': 'text/plain; charset=utf-8' };
 const server = createServer(async (req, res) => {
     const pathname = req.url?.split('?')[0];
     if (pathname === '/api/enquiry') return enquiry(req, res);
     if (!['GET', 'HEAD'].includes(req.method)) { res.writeHead(405); return res.end(); }
+    const normalized = pathname.replace(/\/index\.html$/, '/').replace(/\/+$/, '') || '/';
+    if (req.headers.host?.toLowerCase() === 'www.ndrkfgc.edu.in' || (pages[normalized] && normalized !== pathname)) {
+        const query = req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : '';
+        res.writeHead(308, { Location: (req.headers.host?.toLowerCase() === 'www.ndrkfgc.edu.in' ? 'https://ndrkfgc.edu.in' : '') + (pages[normalized] ? normalized : pathname) + query });
+        return res.end();
+    }
     try {
+        if (decodeURIComponent(pathname).split('/').some(part => part.startsWith('.'))) { res.writeHead(404); return res.end(); }
         let file = resolve(root, '.' + decodeURIComponent(pathname));
         if (file !== root && !file.startsWith(root + sep)) { res.writeHead(403); return res.end(); }
         let status = 200;

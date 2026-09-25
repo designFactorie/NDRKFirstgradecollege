@@ -24,7 +24,7 @@ export default function Home() {
                 {/* Chapter 1 */}
                 <section className="page-hero hero-home" id="chapter-1">
                     <div className="absolute inset-0 overflow-hidden">
-                        <img className="w-full h-full object-cover brightness-75" alt="stately university building" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXSeCpXoD3Thp7ONIw8Owj8lQV0kJ9ewZ_AUinlW6_4D_u7gy1O1W3GQ0bSBOBd7Yh3sRr0-IFQjYiGAFj7BqhQoacFI4vDygTgT9LTYE0LlCMvFpH5Zd62IihtaZhB6fbzniWkIHLLEcrNKV63b9Q5KFt08Tl6DtshS_k0I_vFNnJhj71bp5OrIAbS7DFRkQ4lG5wATqirKTvX335ogSdwMoy1NK0iqdqOMx2y_QdEZLTKhTFy6PjmY8ue4c1Qp0bx-umNFjVZKXI" />
+                        <img fetchPriority="high" decoding="async" className="w-full h-full object-cover brightness-75" alt="stately university building" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXSeCpXoD3Thp7ONIw8Owj8lQV0kJ9ewZ_AUinlW6_4D_u7gy1O1W3GQ0bSBOBd7Yh3sRr0-IFQjYiGAFj7BqhQoacFI4vDygTgT9LTYE0LlCMvFpH5Zd62IihtaZhB6fbzniWkIHLLEcrNKV63b9Q5KFt08Tl6DtshS_k0I_vFNnJhj71bp5OrIAbS7DFRkQ4lG5wATqirKTvX335ogSdwMoy1NK0iqdqOMx2y_QdEZLTKhTFy6PjmY8ue4c1Qp0bx-umNFjVZKXI" />
                         <div className="absolute inset-0 bg-black/40"></div>
                     </div>
                     <div className="hero-container relative z-20 container mx-auto px-8 text-center">

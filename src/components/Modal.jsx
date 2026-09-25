@@ -1,16 +1,21 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useSyncExternalStore } from 'react';
 import { createPortal } from 'react-dom';
 import { X } from 'lucide-react';
+
+const subscribe = () => () => {};
+const clientSnapshot = () => true;
+const serverSnapshot = () => false;
 
 let locks = 0;
 let previousOverflow;
 
 export default function Modal({ open, onClose, titleId, descriptionId, children, className = '', initialFocus }) {
+    const mounted = useSyncExternalStore(subscribe, clientSnapshot, serverSnapshot);
     const ref = useRef(null);
     const backdropPress = useRef(false);
 
     useEffect(() => {
-        if (!open) return;
+        if (!open || !mounted) return;
         const dialog = ref.current;
         const trigger = document.activeElement;
         if (locks++ === 0) {
@@ -24,8 +29,9 @@ export default function Modal({ open, onClose, titleId, descriptionId, children,
             if (--locks === 0) document.body.style.overflow = previousOverflow;
             if (trigger?.isConnected) trigger.focus({ preventScroll: true });
         };
-    }, [open, initialFocus]);
+    }, [open, initialFocus, mounted]);
 
+    if (!mounted) return null;
     return createPortal(
         <dialog ref={ref} className={`site-dialog ${className}`} aria-labelledby={titleId}
             aria-describedby={descriptionId} onCancel={(event) => { event.preventDefault(); onClose(); }}

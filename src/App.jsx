@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import SiteActionsProvider from './components/SiteActionsProvider';
 import NotFound from './pages/NotFound';
@@ -16,10 +16,12 @@ import FAQs from './pages/FAQs';
 import MandatoryDisclosure from './pages/MandatoryDisclosure';
 import Courses from './pages/Courses';
 import ScrollToTop from './components/ScrollToTop';
+import Seo from './components/Seo';
 
 function App() {
   return (
-    <Router>
+    <>
+      <Seo />
       <SiteActionsProvider>
       <ScrollToTop />
       <Navbar />
@@ -37,7 +39,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
       </SiteActionsProvider>
-    </Router>
+    </>
   );
 }
 
