@@ -1,16 +1,22 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
+import { createServer } from 'vite';
+import { pages, seoHead, SITE_URL } from '../src/seo.mjs';
 
-// Real HTML entry files let static hosts serve direct links without hash routing
-// or a 404 redirect hack. Vite's root-absolute asset URLs also work in subfolders.
 const output = resolve('dist');
-const app = await readFile('src/App.jsx', 'utf8');
-const routes = [...app.matchAll(/<Route\s+path="(\/[a-z0-9-]+)"/g)].map((match) => match[1]);
-const html = await readFile(resolve(output, 'index.html'), 'utf8');
-for (const route of routes) {
-    const directory = resolve(output, route.slice(1));
-    await mkdir(directory, { recursive: true });
-    await writeFile(resolve(directory, 'index.html'), html);
-}
-await writeFile(resolve(output, '404.html'), html);
-console.log(`Created ${routes.length} direct-route entry pages and the 404 page.`);
+const template = await readFile(resolve(output, 'index.html'), 'utf8');
+const vite = await createServer({ server: { middlewareMode: true }, appType: 'custom' });
+try {
+ const { render } = await vite.ssrLoadModule('/src/entry-server.jsx');
+ for (const path of [...Object.keys(pages), '/404']) {
+  const content = render(path);
+  const html = template.replace(/<title>[\s\S]*?<\/title>/, () => seoHead(path))
+   .replace('<div id="root"></div>', () => `<div id="root">${content}</div>`);
+  const file = path === '/404' ? resolve(output, '404.html') : resolve(output, '.' + path, 'index.html');
+  await mkdir(resolve(file, '..'), { recursive: true });
+  await writeFile(file, html);
+ }
+ await writeFile(resolve(output, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${Object.keys(pages).map(path => `<url><loc>${SITE_URL}${path}</loc></url>`).join('\n')}\n</urlset>\n`);
+ await writeFile(resolve(output, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`);
+ console.log(`Prerendered ${Object.keys(pages).length} pages, a noindex 404, sitemap.xml and robots.txt.`);
+} finally { await vite.close(); }
