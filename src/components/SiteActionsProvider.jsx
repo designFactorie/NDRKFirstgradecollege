@@ -1,11 +1,11 @@
 import { useRef, useState } from 'react';
-import { GraduationCap, Info, Send } from 'lucide-react';
+import { Info, Send } from 'lucide-react';
 import Modal from './Modal';
 import { SiteActionsContext, resourceMessages } from './siteActions';
 import { submitEnquiry } from '../services/enquiries';
-import { normalizePhone } from '../lib/enquiry.mjs';
+import { normalizePhone, validDateOfBirth, validScore, ADMISSION_MODES } from '../lib/enquiry.mjs';
 
-const emptyForm = { name: '', email: '', phone: '', program: '', message: '' };
+const emptyForm = { name: '', email: '', phone: '', dateOfBirth: '', previousInstitution: '', score: '', program: '', admissionMode: '', message: '' };
 
 export default function SiteActionsProvider({ children }) {
     const [dialog, setDialog] = useState(null);
@@ -41,6 +41,10 @@ export default function SiteActionsProvider({ children }) {
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) nextErrors.email = 'Please enter a valid email address.';
         if (!normalizePhone(data.phone)) nextErrors.phone = 'Enter a 10-digit Indian phone number, optionally starting with +91.';
         if (!['B.Com', 'M.Com', 'BCA', 'BBA'].includes(data.program)) nextErrors.program = 'Please select a program.';
+        if (!validDateOfBirth(data.dateOfBirth)) nextErrors.dateOfBirth = 'Enter a valid date of birth that is not in the future.';
+        if (!data.previousInstitution || data.previousInstitution.length > 200) nextErrors.previousInstitution = 'Enter your previous school or college (up to 200 characters).';
+        if (!validScore(data.score)) nextErrors.score = 'Enter a percentage from 0 to 100 (e.g. 85%) or CGPA from 0 to 10 (e.g. 8.5 CGPA).';
+        if (!ADMISSION_MODES.includes(data.admissionMode)) nextErrors.admissionMode = 'Please select a mode of admission.';
         setErrors(nextErrors);
         setFeedback('');
         if (Object.keys(nextErrors).length) {
@@ -93,26 +97,37 @@ export default function SiteActionsProvider({ children }) {
         <SiteActionsContext.Provider value={{ openEnquiry, showResource }}>
             {children}
             <Modal open={dialog?.type === 'enquiry'} onClose={() => { if (!submitting) setDialog(null); }}
-                titleId="enquiry-title" descriptionId="enquiry-description" initialFocus="#enquiry-name">
+                className="enquiry-dialog" titleId="enquiry-title" descriptionId="enquiry-description" initialFocus="#enquiry-name">
                 <div className="enquiry-heading">
-                    <span className="enquiry-emblem"><GraduationCap size={26} /></span>
                     <p className="dialog-eyebrow">NDRK FIRST GRADE COLLEGE</p>
-                    <h2 id="enquiry-title">Begin your journey.</h2>
-                    <p id="enquiry-description">Tell us about your interests with an admission enquiry.</p>
+                    <h2 id="enquiry-title">Admission enquiry</h2>
+                    <p id="enquiry-description">Share your details. Our admissions team will get in touch.</p>
                 </div>
                 <form ref={formRef} className="enquiry-form" onSubmit={handleSubmit} noValidate aria-busy={submitting}>
-                    <p className="enquiry-note"><Info size={17} aria-hidden="true" /> Your details will be used by NDRK First Grade College to respond to this enquiry.</p>
-                    <p className="required-note">Fields marked * are required.</p>
+                    <p className="required-note">* Required fields</p>
                     <fieldset className="enquiry-grid" disabled={submitting}>
-                        <label htmlFor="enquiry-name">Name *<input {...fieldProps('name')} autoComplete="name" maxLength={120} required placeholder="Your full name" />{error('name')}</label>
+                        <legend className="enquiry-section-title">1. Personal Information</legend>
+                        <label htmlFor="enquiry-name">Full Name *<input {...fieldProps('name')} autoComplete="name" maxLength={120} required placeholder="As per 10th marks card" />{error('name')}</label>
                         <label htmlFor="enquiry-email">Email *<input {...fieldProps('email')} type="email" autoComplete="email" maxLength={254} required placeholder="you@example.com" />{error('email')}</label>
                         <label htmlFor="enquiry-phone">Phone number *<input {...fieldProps('phone')} type="tel" autoComplete="tel" maxLength={25} required placeholder="Your phone number" />{error('phone')}</label>
+                        <label htmlFor="enquiry-dateOfBirth">Date of Birth *<input {...fieldProps('dateOfBirth')} type="date" autoComplete="bday" min="1900-01-01" max={new Date().toISOString().slice(0, 10)} required />{error('dateOfBirth')}</label>
+                    </fieldset>
+                    <fieldset className="enquiry-grid" disabled={submitting}>
+                        <legend className="enquiry-section-title">2. Academic History</legend>
+                        <label htmlFor="enquiry-previousInstitution">Previous Institution *<input {...fieldProps('previousInstitution')} maxLength={200} required placeholder="College/School Name" />{error('previousInstitution')}</label>
+                        <label htmlFor="enquiry-score">Percentage / CGPA *<input {...fieldProps('score')} maxLength={30} required placeholder="e.g. 85% or 8.5 CGPA" />{error('score')}</label>
+                    </fieldset>
+                    <fieldset className="enquiry-grid" disabled={submitting}>
+                        <legend className="enquiry-section-title">3. Course Selection</legend>
                         <label htmlFor="enquiry-program">Program *<select {...fieldProps('program')} required><option value="">Select a program</option><option>B.Com</option><option>M.Com</option><option>BCA</option><option>BBA</option></select>{error('program')}</label>
-                        <label htmlFor="enquiry-message" className="enquiry-message">Message <span className="optional">(optional)</span><textarea {...fieldProps('message')} rows={3} maxLength={3000} placeholder="What would you like to know?" /></label>
+                        <label htmlFor="enquiry-admissionMode">Mode of Admission *<select {...fieldProps('admissionMode')} required><option value="">Select admission mode</option>{ADMISSION_MODES.map(mode => <option key={mode}>{mode}</option>)}</select>{error('admissionMode')}</label>
+                        <label htmlFor="enquiry-message" className="enquiry-message">Message <span className="optional">(optional)</span><textarea {...fieldProps('message')} rows={2} maxLength={3000} placeholder="What would you like to know?" /></label>
                     </fieldset>
                     {feedback && <p role="status" className="enquiry-feedback">{feedback}</p>}
+                    <div className="enquiry-actions">
+                    <p className="enquiry-privacy">Your details are used to respond to your enquiry.</p>
                     <button ref={submitRef} className="enquiry-submit" type="submit" disabled={submitting}>{submitting ? 'Submitting…' : 'Submit Enquiry'}<Send size={18} aria-hidden="true" /></button>
-                    <p className="enquiry-footnote">A confirmation appears only after your enquiry has been saved.</p>
+                    </div>
                 </form>
             </Modal>
             <Modal open={dialog?.type === 'resource'} onClose={() => setDialog(null)} titleId="resource-title" descriptionId="resource-description">

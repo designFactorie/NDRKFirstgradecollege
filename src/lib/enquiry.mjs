@@ -1,7 +1,9 @@
 export const INSTITUTION = 'NDRK FGC';
 export const PROGRAMS = ['B.Com', 'M.Com', 'BCA', 'BBA'];
 export const RECEIPT_PATTERN = /^[a-f0-9]{8}-(?:[a-f0-9]{4}-){3}[a-f0-9]{12}:[A-Za-z0-9_-]{43}$/;
-const FIELDS = ['name', 'phone', 'email', 'program', 'message', 'purpose'];
+export const ADMISSION_MODES = ['Merit Based', 'Management Quota'];
+export const PROTOCOL = 2;
+const FIELDS = ['name', 'phone', 'email', 'dateOfBirth', 'previousInstitution', 'score', 'program', 'admissionMode', 'message', 'purpose'];
 const memoryReceipts = new Map();
 
 export function normalizePhone(value) {
@@ -11,13 +13,26 @@ export function normalizePhone(value) {
     return /^\d{10}$/.test(phone) ? phone : null;
 }
 
+export function validDateOfBirth(value) {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
+    const date = new Date(value + 'T00:00:00Z');
+    return !Number.isNaN(date.getTime()) && date.toISOString().slice(0, 10) === value &&
+        value >= '1900-01-01' && value <= new Date().toISOString().slice(0, 10);
+}
+
+export function validScore(value) {
+    const match = /^(\d{1,3}(?:\.\d{1,2})?)\s*(%|CGPA)?$/i.exec(value);
+    return Boolean(match) && Number(match[1]) <= (match[2]?.toUpperCase() === 'CGPA' ? 10 : 100);
+}
+
 export function normalizeEnquiry(input) {
     if (!input || FIELDS.some((key) => typeof input[key] !== 'string')) return null;
-    if (input.name.length > 120 || input.email.length > 254 || input.message.length > 3000) return null;
+    if (input.name.length > 120 || input.email.length > 254 || input.message.length > 3000 || input.previousInstitution.length > 200 || input.score.length > 30) return null;
     const data = Object.fromEntries(FIELDS.map((key) => [key, input[key].trim()]));
     data.phone = normalizePhone(input.phone);
     if (!data.name || !data.phone || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email) ||
-        !PROGRAMS.includes(data.program) || !['apply', 'visit'].includes(data.purpose)) return null;
+        !validDateOfBirth(data.dateOfBirth) || !data.previousInstitution || !validScore(data.score) ||
+        !ADMISSION_MODES.includes(data.admissionMode) || !PROGRAMS.includes(data.program) || !['apply', 'visit'].includes(data.purpose)) return null;
     return data;
 }
 

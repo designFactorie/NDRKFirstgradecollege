@@ -1,15 +1,21 @@
 # NDRK FGC enquiry setup
 
+## Updating from the previous form
+
+The new layout uses protocol 2 and 15 columns. The website and Apps Script must be updated together. Since the NDRK FGC enquiry rows have been cleared, replace that tab's row 1 with the headings below; do not change other tabs. Paste into A1 and use Data > Split text to columns with custom separator `|` if needed. Ensure the result occupies A1:O1 with no extra spaces.
+
+Replace Code.gs with the complete updated script and publish a **new version of the existing web-app deployment**. Saving in the editor alone does not update /exec. Keep the existing secret and URL. Restart/redeploy the website backend, run `npm run check:enquiry`, and then submit one test enquiry. Until all parts match, the form will report an error instead of claiming success.
+
 ## 1. Spreadsheet
 
 Use spreadsheet `12j_Rs6qbmOdJ_YgvaNf9gChZbgCbBUzm-mG-0EtNHTM` and tab **NDRK FGC**.
-Row 1 must contain these exact headings in A:K (split on `|`):
+Row 1 must contain these exact headings in A:O (split on `|`):
 
 ```text
-Date & Time|Institution|Name|Email Address|Phone Number|Program|Message|Enquiry Type|Submission Receipt|Status|Notes
+Date & Time|Institution|Name|Email Address|Phone Number|Date of Birth|Previous Institution|Percentage / CGPA|Program|Mode of Admission|Message|Enquiry Type|Submission Receipt|Status|Notes
 ```
 
-Column I is the submission receipt. It may be hidden, but must not be removed or
+Column M is the submission receipt. It may be hidden, but must not be removed or
 reordered. Status and Notes are staff fields and are left blank by the script.
 Do not modify another school's tab or Apps Script project.
 
@@ -97,7 +103,9 @@ publishes static files only and does not deploy this backend.
 
 ## Behaviour and testing limits
 
-- Existing form fields remain: name, email, phone, program and optional message.
+- Required fields: name, email, phone, date of birth, previous institution, percentage / CGPA, program and mode of admission. Message remains optional.
+- Dates use YYYY-MM-DD and must be valid, from 1900 onwards, and not in the future. Scores accept 0?100 percentages (e.g. 85%) or 0?10 CGPA (e.g. 8.5 CGPA); bare numbers are treated as percentages. Admission modes are Merit Based and Management Quota.
+- Date & Time and Institution are automatic. Status (N) and Notes (O) are left blank for staff.
 - +91 phone numbers normalize to 10 digits. Messages support up to 3,000 characters.
 - Apply Now sends Admission; campus-tour/visit buttons send Campus Visit.
 - A SHA-256 fingerprint and UUID receipt identify a submission. Receipts (not raw
@@ -112,5 +120,4 @@ publishes static files only and does not deploy this backend.
   browser requests; they are not bot protection. Public launch may require additional
   host-level rate limiting or CAPTCHA depending on traffic.
 
-The live URL and secret were not supplied during implementation. Automated test
-success does not prove a row was saved in the real Google Sheet.
+Automated tests use a simulated Sheet; they do not prove a live row was saved. After updating the headers and Apps Script deployment, run the live connection check and submit a labelled test enquiry.
